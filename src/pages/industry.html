@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industry page — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Industry page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A page per industry, built from one template: the cross-border issues businesses in that sector raise most, the member firms that list it as a specialism, and case studies and insights tagged with it.</p></div>
+          <div><h2>Why</h2><p>There are no industry pages on claglobal.com, and industries don't appear in the navigation. Yet the firm profiles already list them: seven for CLA Malta, nine for S&amp;W. Most of what an industry page needs is sitting in the profiles, so the effort is mainly in writing the issues section and tagging insights properly.</p></div>
+        </div>
+        <p class="proposal-foot">Shown with manufacturing and distribution. Use the menu under the title to switch industry; other industries show placeholder issues.</p>
+      </div>
+    </aside>
+
+    <div id="industry-app">
+      <div class="page-head">
+        <div class="container">
+          <p class="eyebrow">Industries</p>
+          <h1 data-i="name">Industry</h1>
+          <p class="lead">[One or two sentences on what member firms do for <span data-i="name">this industry</span> across borders.]</p>
+          <div class="field" style="max-width:320px;margin:1rem 0 0"><label for="industry-switch">Another industry</label><select id="industry-switch"></select></div>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top:2rem">
+        <section aria-labelledby="iss-title">
+          <h2 class="section-title" id="iss-title">What we hear from clients</h2>
+          <div class="grid grid-3" id="industry-issues"></div>
+        </section>
+
+        <section aria-labelledby="ifirm-title">
+          <h2 class="section-title" id="ifirm-title">Firms with this specialism</h2>
+          <p id="industry-count"></p>
+          <div class="finder-results" id="industry-firms"></div>
+          <p style="margin-top:1rem"><a class="btn btn-secondary" id="industry-all" href="find-a-firm.html">See every firm in the finder</a></p>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Shows up to six network firms that list the industry on their profile. The button opens the finder with the industry filter applied.</p>
+        </section>
+
+        <section aria-labelledby="iins-title">
+          <h2 class="section-title" id="iins-title">Case studies and insights</h2>
+          <div class="insight-list" id="industry-insights"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

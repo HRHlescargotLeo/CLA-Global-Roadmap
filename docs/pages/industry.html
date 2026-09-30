@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industry page — CLA Global prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
+          <li><a href="../pages/home.html" data-proto="home service industry"><span class="n">2</span> For clients</a></li>
+          <li><a href="../pages/enquiry.html" data-proto="enquiry"><span class="n">3</span> Enquiry and RFP</a></li>
+          <li><a href="../pages/join.html" data-proto="join application"><span class="n">4</span> Join CLA Global</a></li>
+          <li><a href="../pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Industry page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A page per industry, built from one template: the cross-border issues businesses in that sector raise most, the member firms that list it as a specialism, and case studies and insights tagged with it.</p></div>
+          <div><h2>Why</h2><p>There are no industry pages on claglobal.com, and industries don't appear in the navigation. Yet the firm profiles already list them: seven for CLA Malta, nine for S&amp;W. Most of what an industry page needs is sitting in the profiles, so the effort is mainly in writing the issues section and tagging insights properly.</p></div>
+        </div>
+        <p class="proposal-foot">Shown with manufacturing and distribution. Use the menu under the title to switch industry; other industries show placeholder issues.</p>
+      </div>
+    </aside>
+
+    <div id="industry-app">
+      <div class="page-head">
+        <div class="container">
+          <p class="eyebrow">Industries</p>
+          <h1 data-i="name">Industry</h1>
+          <p class="lead">[One or two sentences on what member firms do for <span data-i="name">this industry</span> across borders.]</p>
+          <div class="field" style="max-width:320px;margin:1rem 0 0"><label for="industry-switch">Another industry</label><select id="industry-switch"></select></div>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top:2rem">
+        <section aria-labelledby="iss-title">
+          <h2 class="section-title" id="iss-title">What we hear from clients</h2>
+          <div class="grid grid-3" id="industry-issues"></div>
+        </section>
+
+        <section aria-labelledby="ifirm-title">
+          <h2 class="section-title" id="ifirm-title">Firms with this specialism</h2>
+          <p id="industry-count"></p>
+          <div class="finder-results" id="industry-firms"></div>
+          <p style="margin-top:1rem"><a class="btn btn-secondary" id="industry-all" href="find-a-firm.html">See every firm in the finder</a></p>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Shows up to six network firms that list the industry on their profile. The button opens the finder with the industry filter applied.</p>
+        </section>
+
+        <section aria-labelledby="iins-title">
+          <h2 class="section-title" id="iins-title">Case studies and insights</h2>
+          <div class="insight-list" id="industry-insights"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces CLA Global's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Firm names from claglobal.com; people, contact details and figures are sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firm profile — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 1 of 5 · Firm profile</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>One profile template for every firm, network or alliance. Headline figures and named contacts at the top, services and industries as links back into the finder, a short guide to doing business in that country, and the firm's own insights. A single "Ask this firm" button starts an enquiry with the firm already chosen.</p></div>
+          <div><h2>Why</h2><p>The current profiles have the right ingredients but present them unevenly. Industry lists run together with full stops and no spaces, the UK page is titled "CLA United Kingdom" although the firm is S&amp;W, and two of the four partner emails on the Malta profile use a different domain from the firm's website. A template with structured fields fixes the presentation once, and gives each firm a reason to keep its entry up to date.</p></div>
+        </div>
+        <p class="proposal-foot">Open any firm from the finder, or change the address to firm.html?firm=dhpg. People, emails and figures are sample data.</p>
+      </div>
+    </aside>
+
+    <div id="firm-app">
+      <!-- Profile head (R14) -->
+      <div class="page-head">
+        <div class="container profile-head">
+          <div>
+            <p class="eyebrow"><a href="find-a-firm.html">Find a firm</a> › <span data-f="country">Country</span></p>
+            <h1 data-f="name">Firm name</h1>
+            <p class="lead"><span data-f="type">Network member</span> · <span data-f="place">City</span></p>
+            <p>[Two or three sentences about the firm, in its own words: when it was founded, what it is known for, the kinds of clients it works with.]</p>
+            <div class="row" style="margin-top:1rem">
+              <a class="btn" href="enquiry.html" data-f-href="enquiry.html?firm=">Ask this firm</a>
+              <a class="btn btn-secondary" href="#">Visit the firm's website</a>
+            </div>
+          </div>
+          <div class="key-strip" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+            <div><b data-f="offices">0</b><span>offices</span></div>
+            <div><b data-f="partners">0</b><span>partners</span></div>
+            <div><b data-f="people">0</b><span>people</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top:2rem">
+        <div class="tabs" role="tablist" aria-label="Firm profile">
+          <button class="tab active" data-tab="t-people" aria-selected="true">People</button>
+          <button class="tab" data-tab="t-services" aria-selected="false">Services and industries</button>
+          <button class="tab" data-tab="t-guide" aria-selected="false"><span data-f="guide-title">Doing business in</span></button>
+          <button class="tab" data-tab="t-insights" aria-selected="false">Insights</button>
+        </div>
+        <div>
+          <!-- People (R15) -->
+          <div class="tab-panel active" id="t-people" role="tabpanel">
+            <div class="people-list" id="firm-contacts"></div>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">CMS</span>Each firm edits its own contacts, with a photo, role, email and LinkedIn. A six-monthly email asks each firm to confirm its entry is current.</p>
+          </div>
+          <!-- Services and industries (R16) -->
+          <div class="tab-panel" id="t-services" role="tabpanel">
+            <div class="grid grid-2">
+              <div><h2 class="h3">Services</h2><ul class="tag-list" id="firm-services"></ul></div>
+              <div><h2 class="h3">Industries</h2><ul class="tag-list" id="firm-industries"></ul></div>
+            </div>
+            <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Services open the network-wide service page. Industries open the finder filtered to every firm with that specialism.</p>
+          </div>
+          <!-- Country guide (R17) -->
+          <div class="tab-panel" id="t-guide" role="tabpanel">
+            <p>A short guide for businesses looking at <span data-f="guide-country">this country</span>, written and kept up to date by the member firm.</p>
+            <div class="guide-grid">
+              <div class="panel"><h3 class="h4">Setting up</h3><dl class="kv"><dt>Common entity</dt><dd>[Entity type]</dd><dt>Typical time to register</dt><dd>[x weeks]</dd><dt>Local director needed</dt><dd>[Yes / No]</dd></dl></div>
+              <div class="panel"><h3 class="h4">Tax headlines</h3><dl class="kv"><dt>Corporate income tax</dt><dd>[x]%</dd><dt>VAT / GST standard rate</dt><dd>[x]%</dd><dt>Tax year</dt><dd>[Dates]</dd></dl></div>
+              <div class="panel"><h3 class="h4">People</h3><dl class="kv"><dt>Payroll frequency</dt><dd>[Monthly]</dd><dt>Employer social security</dt><dd>[x]%</dd><dt>Work permits</dt><dd>[Summary]</dd></dl></div>
+            </div>
+            <div class="accordion" style="margin-top:1.25rem">
+              <div class="accordion-item"><button type="button" class="accordion-title">Audit and filing requirements<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>[When a statutory audit is required, filing deadlines and the accounting framework used.]</p></div></div>
+              <div class="accordion-item"><button type="button" class="accordion-title">Key dates this year<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>[Upcoming legislative changes and filing dates, with links to the firm's insights.]</p></div></div>
+            </div>
+            <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>All figures are placeholders. Would each firm write and own its guide, and how often should it be reviewed? A "last checked" date would sit at the foot of each guide.</p>
+          </div>
+          <!-- Insights (R17) -->
+          <div class="tab-panel" id="t-insights" role="tabpanel">
+            <div class="insight-list" id="firm-insights"></div>
+          </div>
+        </div>
+
+        <section class="panel surface" id="firm-others" style="margin-top:2rem" hidden></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

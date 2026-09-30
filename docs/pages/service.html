@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service page — CLA Global prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
+          <li><a href="../pages/home.html" data-proto="home service industry"><span class="n">2</span> For clients</a></li>
+          <li><a href="../pages/enquiry.html" data-proto="enquiry"><span class="n">3</span> Enquiry and RFP</a></li>
+          <li><a href="../pages/join.html" data-proto="join application"><span class="n">4</span> Join CLA Global</a></li>
+          <li><a href="../pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Service page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Each service page lists its specialisms as real sections with their own headings, names three people who lead the service in member firms, says how many firms offer it and where, and shows the latest related insights. Every specialism links to the firms that offer it.</p></div>
+          <div><h2>Why</h2><p>The Tax page mentions transfer pricing, global mobility and indirect tax, but as bullet points and bold text inside one long page. Audit, Tax and Outsourcing each have two headings in total: the page title and "Contact Us". Only Advisory names anyone. A finance director comparing networks wants to know who does the work and in which countries, and at the moment the page can't tell them.</p></div>
+        </div>
+        <p class="proposal-foot">Tax is written out in full. The other three services use the same template with placeholder copy: try the service links under the title.</p>
+      </div>
+    </aside>
+
+    <div id="service-app">
+      <div class="page-head">
+        <div class="container">
+          <p class="eyebrow">What we do</p>
+          <h1 data-s="name">Service</h1>
+          <p class="lead" id="service-intro"></p>
+          <ul class="service-switch" aria-label="Other services">
+            <li><a href="service.html?service=audit">Audit</a></li>
+            <li><a href="service.html?service=tax">Tax</a></li>
+            <li><a href="service.html?service=advisory">Advisory</a></li>
+            <li><a href="service.html?service=outsourcing">Outsourcing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top:2rem">
+        <div class="service-layout">
+          <nav class="service-nav" aria-label="On this page"><ul id="service-nav"></ul></nav>
+          <div>
+            <!-- Sub-services (R27) -->
+            <div id="service-subs"></div>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">CMS</span>Each specialism is its own block with a heading, so it can be linked to, reordered or given its own page later if it grows.</p>
+
+            <!-- Experts (R28) -->
+            <section aria-labelledby="exp-title">
+              <h2 class="section-title" id="exp-title">Talk to a specialist</h2>
+              <div class="people-list" id="service-experts"></div>
+              <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Who chooses the three people per service, and do they rotate? One option is the chair of each service line group plus two partners from different regions.</p>
+            </section>
+
+            <!-- Coverage (R27) -->
+            <section class="panel surface" aria-label="Where this service is offered">
+              <p style="margin:0" id="service-firms"></p>
+            </section>
+
+            <!-- Related insights (R29) -->
+            <section aria-labelledby="sins-title" style="margin-top:3rem">
+              <h2 class="section-title" id="sins-title">Latest on <span data-s="name">this service</span></h2>
+              <div class="insight-list" id="service-insights"></div>
+            </section>
+
+            <div class="panel" style="display:grid;gap:0.75rem">
+              <h2 class="h3" style="margin:0">Need <span data-s="name">this</span> help in more than one country?</h2>
+              <p style="margin:0">Tell us where and the network will put one team together, with one lead contact.</p>
+              <div><a class="btn" href="enquiry.html" data-s-href="enquiry.html?service=">Start an enquiry</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces CLA Global's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Firm names from claglobal.com; people, contact details and figures are sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

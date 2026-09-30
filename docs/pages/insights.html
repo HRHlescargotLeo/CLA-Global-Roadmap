@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights — CLA Global prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
+          <li><a href="../pages/home.html" data-proto="home service industry"><span class="n">2</span> For clients</a></li>
+          <li><a href="../pages/enquiry.html" data-proto="enquiry"><span class="n">3</span> Enquiry and RFP</a></li>
+          <li><a href="../pages/join.html" data-proto="join application"><span class="n">4</span> Join CLA Global</a></li>
+          <li><a href="../pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 5 · Insights and research hub</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>An insights hub that can be searched and filtered by type, service, industry and country, with case studies and research alongside articles. A flagship annual report gets its own page, articles link to the author's firm, and readers can sign up for email updates on the topics they care about.</p></div>
+          <div><h2>Why</h2><p>Member firms publish useful, local pieces (Malta and ViDA, UAE and US tax residency, Pillar Two), but the Insights page is six pages with no filter or search, and the same two "featured" items sit at the top of every page. There is no email sign-up anywhere on the site. There is also no research programme, which is the one thing every comparable network we looked at has. For a network positioned on mid-market businesses with cross-border ambitions, an annual survey of exactly those businesses would be hard to beat as a reason to visit.</p></div>
+        </div>
+        <p class="proposal-foot">Titles and dates of articles are from claglobal.com. Service, industry and country tags, case studies and the report are sample content.</p>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow">Insights</p>
+        <h1>Insights from member firms</h1>
+        <p class="lead">Tax, audit and advisory updates from the countries where member firms work, plus client stories and research.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:2rem">
+      <!-- Flagship report (R53) -->
+      <a class="feature-band" href="report.html" style="color:inherit;text-decoration:none">
+        <div class="wf-placeholder ratio-16-9">Report cover 16:9</div>
+        <div>
+          <p class="eyebrow">Research · Sample</p>
+          <h2>Mid-Market Crossings 2026</h2>
+          <p>How privately owned businesses are growing across borders: a survey of [x] owners and finance leaders in [x] countries.</p>
+          <span class="btn">Explore the findings</span>
+        </div>
+      </a>
+
+      <div class="ins-layout" id="ins-app">
+        <!-- Filters (R50, R51) -->
+        <aside class="ins-filters" aria-label="Filter insights">
+          <form id="ins-form" role="search" class="field"><label for="ins-q">Search insights</label><input type="search" id="ins-q" placeholder="Topic, country or firm"></form>
+          <div class="field"><label for="ins-service">Service</label><select id="ins-service"></select></div>
+          <div class="field"><label for="ins-industry">Industry</label><select id="ins-industry"></select></div>
+          <div class="field"><label for="ins-country">Country</label><select id="ins-country"></select></div>
+          <button type="button" class="btn-link" id="ins-clear" style="justify-self:start">Clear all filters</button>
+          <!-- Email sign-up (R54) -->
+          <div class="panel surface signup-panel">
+            <h2 class="h4" style="margin:0">Get insights by email</h2>
+            <p class="wf-meta" style="margin:0">Choose topics and regions. One email a month, at most.</p>
+            <button type="button" class="btn" data-modal-open="signup">Sign up</button>
+          </div>
+        </aside>
+
+        <div>
+          <div class="results-toolbar" style="margin-top:0">
+            <div class="type-chips" role="group" aria-label="Type">
+              <button type="button" class="chip" data-itype="" aria-pressed="true">All</button>
+              <button type="button" class="chip" data-itype="Article" aria-pressed="false">Articles</button>
+              <button type="button" class="chip" data-itype="Case study" aria-pressed="false">Case studies</button>
+              <button type="button" class="chip" data-itype="Report" aria-pressed="false">Research</button>
+            </div>
+            <p class="result-count" id="ins-count" aria-live="polite" style="margin:0"></p>
+          </div>
+          <div class="insight-list" id="ins-results"></div>
+          <p class="load-more"><button type="button" class="btn btn-secondary" id="ins-more">Show more</button></p>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Newest first, six at a time. Filters combine and stay in the page address. Featured items appear once, at the top, rather than on every page of results.</p>
+          <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Tagging needs a short list of topics that firms stick to. Who in the global office would check tags before an insight goes live?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign-up modal (R54) -->
+    <div class="wf-modal" id="signup" role="dialog" aria-modal="true" aria-labelledby="signup-title">
+      <div class="wf-modal-panel">
+        <button type="button" class="wf-modal-close" aria-label="Close">×</button>
+        <h2 id="signup-title" class="h3">Get insights by email</h2>
+        <form class="signup-form" novalidate>
+          <div class="field"><label for="su-email">Email</label><input type="email" id="su-email" required><p class="field-error" hidden>Enter an email address like name@company.com.</p></div>
+          <fieldset><legend>Topics</legend><div class="check-grid">
+            <label class="check"><input type="checkbox" name="topic" value="Tax"> Tax</label>
+            <label class="check"><input type="checkbox" name="topic" value="Audit"> Audit</label>
+            <label class="check"><input type="checkbox" name="topic" value="Advisory"> Advisory</label>
+            <label class="check"><input type="checkbox" name="topic" value="Outsourcing"> Outsourcing</label>
+            <label class="check"><input type="checkbox" name="topic" value="Research"> Research and reports</label>
+          </div></fieldset>
+          <div class="field"><label for="su-region">Regions</label><select id="su-region"><option>All regions</option><option>Americas</option><option>Europe</option><option>Middle East and Africa</option><option>Asia Pacific</option></select></div>
+          <div class="field"><label class="check"><input type="checkbox" id="su-consent" required> I agree to receive emails from CLA Global and can unsubscribe at any time.</label><p class="field-error" hidden>Please agree to receive emails.</p></div>
+          <button type="submit" class="btn">Sign up</button>
+        </form>
+        <div class="signup-done" hidden><p><b>You're signed up.</b> Your first email will cover <span data-topics></span>. Check your inbox to confirm your address.</p></div>
+        <p class="wf-note" data-note="3"><span class="wf-note-label">Technical</span>Sign-ups go to a HubSpot list with topic and region properties, so the monthly email can be tailored.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces CLA Global's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Firm names from claglobal.com; people, contact details and figures are sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

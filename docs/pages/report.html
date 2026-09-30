@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flagship research report — CLA Global prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
+          <li><a href="../pages/home.html" data-proto="home service industry"><span class="n">2</span> For clients</a></li>
+          <li><a href="../pages/enquiry.html" data-proto="enquiry"><span class="n">3</span> Enquiry and RFP</a></li>
+          <li><a href="../pages/join.html" data-proto="join application"><span class="n">4</span> Join CLA Global</a></li>
+          <li><a href="../pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 5 · Flagship research</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>An annual survey of privately owned, mid-market businesses with cross-border plans, published as a web report: headline findings, charts that can be cut by region, chapters and a PDF. It gives the LinkedIn campaign, member firms and the press something new to talk about every year.</p></div>
+          <div><h2>Why</h2><p>We found no research programme on claglobal.com. All five networks we compared run one, and most are into their second or later edition. CLA Global's positioning names its audience more precisely than most of them do, which is the hard part of designing a survey. This is the largest idea in the pack, and the web page is the smaller part of the work: the survey itself would need a research partner and a budget.</p></div>
+        </div>
+        <p class="proposal-foot">Title, questions and every figure on this page are invented to show the format. Nothing here is real data.</p>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow">Research · Sample</p>
+        <h1>Mid-Market Crossings 2026</h1>
+        <p class="lead">How privately owned businesses are growing across borders. A survey of [x] owners and finance leaders in [x] countries, carried out in [month year].</p>
+        <div class="row" style="margin-top:1rem"><button type="button" class="btn" data-toast="The PDF downloads here once the report is published">Download the PDF</button><a class="btn btn-secondary" href="enquiry.html">Discuss the findings with a firm</a></div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:2rem">
+      <section aria-labelledby="kf-title">
+        <h2 class="section-title" id="kf-title">Key findings</h2>
+        <div class="statistics">
+          <div class="stat-item"><div class="stat-value">[62]%</div><div class="stat-title">plan to enter a new country within two years</div></div>
+          <div class="stat-item"><div class="stat-value">[48]%</div><div class="stat-title">say tax and regulation is the biggest barrier</div></div>
+          <div class="stat-item"><div class="stat-value">[41]%</div><div class="stat-title">want one adviser across all their markets</div></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="chart-title">
+        <h2 class="section-title" id="chart-title">Findings by region</h2>
+        <div class="row between" style="margin-bottom:1rem">
+          <p style="margin:0">Showing: <b id="rep-cut-label">All respondents</b></p>
+          <div class="field" style="margin:0;min-width:220px"><label for="rep-cut">Region</label><select id="rep-cut"></select></div>
+        </div>
+        <div class="rbars" id="rep-bars" aria-live="polite"></div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Choosing a region redraws the chart. Each chart can be downloaded as an image for use in member firm presentations and on LinkedIn.</p>
+      </section>
+
+      <section aria-labelledby="ch-title">
+        <h2 class="section-title" id="ch-title">Chapters</h2>
+        <div class="accordion" data-single>
+          <div class="accordion-item open"><button type="button" class="accordion-title">1. Where businesses are expanding next<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>[Chapter summary with one chart and a quote from a member firm partner.]</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-title">2. Tax, tariffs and regulation<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>[Chapter summary.]</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-title">3. Finding and keeping people abroad<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>[Chapter summary.]</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-title">4. Ownership, succession and exit<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>[Chapter summary.]</p></div></div>
+        </div>
+      </section>
+
+      <section class="panel surface" aria-labelledby="meth-title">
+        <h2 class="h4" id="meth-title">About the research</h2>
+        <p class="wf-meta" style="margin:0">[Research partner, sample size, countries, dates and how respondents were chosen.]</p>
+        <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Is there appetite and budget for an annual survey? A lighter first edition could poll member firms' own clients.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces CLA Global's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Firm names from claglobal.com; people, contact details and figures are sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

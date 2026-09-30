@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership questionnaire — CLA Global prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
+          <li><a href="../pages/home.html" data-proto="home service industry"><span class="n">2</span> For clients</a></li>
+          <li><a href="../pages/enquiry.html" data-proto="enquiry"><span class="n">3</span> Enquiry and RFP</a></li>
+          <li><a href="../pages/join.html" data-proto="join application"><span class="n">4</span> Join CLA Global</a></li>
+          <li><a href="../pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 5 · Membership questionnaire (stage two)</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The detailed questions from today's join form, moved into a questionnaire that a firm is sent after its first call. It is split into short sections, uses bands and tick-boxes instead of free text, checks that the revenue split adds up to 100%, and can be saved and finished later.</p></div>
+          <div><h2>Why</h2><p>The information is reasonable to ask for. The timing is the problem. Today it is 21 required free-text fields on a public contact form, answered before anyone has spoken to the firm, and the answers arrive in formats nobody can compare ("about 40", "40-50", "forty"). Asking later, in bands, gets cleaner answers from firms that are already interested.</p></div>
+        </div>
+        <p class="proposal-foot">Questions follow the current claglobal.com join form. Band ranges are placeholders for CLA Global to set.</p>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow">Membership</p>
+        <h1>Membership questionnaire</h1>
+        <p class="lead">About 10 minutes. You can save your answers and come back to them.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:2rem">
+      <div class="enq-layout">
+        <div id="app-app">
+          <ol class="stepper four" aria-label="Sections">
+            <li class="current">Your firm</li>
+            <li>Services</li>
+            <li>Clients</li>
+            <li>Review</li>
+          </ol>
+          <p class="progress-line" id="app-progress" aria-live="polite">Section 1 of 4</p>
+
+          <section class="step-panel" data-step="1" aria-labelledby="a1">
+            <h2 id="a1" class="h3">Your firm</h2>
+            <div class="form-grid">
+              <div class="field"><label for="app-firmname">Firm name</label><input type="text" id="app-firmname" data-review="Firm" required><p class="field-error" hidden>Enter your firm's name.</p></div>
+              <div class="field"><label for="app-web">Website</label><input type="text" id="app-web" data-review="Website" required><p class="field-error" hidden>Enter your website.</p></div>
+              <div class="field"><label for="app-rank">Ranking in your country</label><select id="app-rank" data-review="Ranking" required><option value="">Choose</option><option>Top 10</option><option>11–25</option><option>26–50</option><option>Outside the top 50</option><option>Not ranked</option></select><p class="field-error" hidden>Choose one.</p></div>
+              <div class="field"><label for="app-partners">Partners and equivalents</label><select id="app-partners" data-review="Partners" required><option value="">Choose</option><option>1–4</option><option>5–9</option><option>10–24</option><option>25–49</option><option>50 or more</option></select><p class="field-error" hidden>Choose one.</p></div>
+              <div class="field"><label for="app-people">Total personnel</label><select id="app-people" data-review="Personnel" required><option value="">Choose</option><option>Under 25</option><option>25–99</option><option>100–249</option><option>250–999</option><option>1,000 or more</option></select><p class="field-error" hidden>Choose one.</p></div>
+              <div class="field"><label for="app-revenue">Annual revenue (in euros)</label><select id="app-revenue" data-review="Revenue" required><option value="">Choose</option><option>Under €2m</option><option>€2m–€5m</option><option>€5m–€20m</option><option>€20m–€50m</option><option>Over €50m</option></select><p class="field-hint">One currency keeps answers comparable.</p><p class="field-error" hidden>Choose one.</p></div>
+            </div>
+            <div class="step-nav"><button type="button" class="btn btn-secondary" id="app-save">Save and finish later</button><button type="button" class="btn" data-next>Next: services</button></div>
+          </section>
+
+          <section class="step-panel" data-step="2" aria-labelledby="a2" hidden>
+            <h2 id="a2" class="h3">Services</h2>
+            <fieldset>
+              <legend>Which services does your firm offer?</legend>
+              <div class="check-grid">
+                <label class="check"><input type="checkbox" name="app-services" value="Audit and assurance" data-group required> Audit and assurance</label>
+                <label class="check"><input type="checkbox" name="app-services" value="Tax"> Tax</label>
+                <label class="check"><input type="checkbox" name="app-services" value="Advisory"> Advisory</label>
+                <label class="check"><input type="checkbox" name="app-services" value="Outsourcing"> Outsourcing</label>
+                <label class="check"><input type="checkbox" name="app-services" value="Legal"> Legal</label>
+              </div>
+              <p class="field-error" hidden>Choose at least one service.</p>
+            </fieldset>
+            <fieldset>
+              <legend>Roughly how is your revenue split?</legend>
+              <div class="range-row"><label for="split-audit">Audit</label><input type="range" id="split-audit" min="0" max="100" step="5" value="40" data-split="Audit"><output id="split-audit-v">40%</output></div>
+              <div class="range-row"><label for="split-tax">Tax</label><input type="range" id="split-tax" min="0" max="100" step="5" value="35" data-split="Tax"><output id="split-tax-v">35%</output></div>
+              <div class="range-row"><label for="split-adv">Advisory and outsourcing</label><input type="range" id="split-adv" min="0" max="100" step="5" value="25" data-split="Advisory and outsourcing"><output id="split-adv-v">25%</output></div>
+              <div class="split-total"><span>Total</span><span id="split-total">100%</span></div>
+            </fieldset>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The total turns red if it isn't 100%, and the next section won't open until it is.</p>
+            <div class="step-nav"><button type="button" class="btn btn-secondary" data-back>Back</button><button type="button" class="btn" data-next>Next: clients</button></div>
+          </section>
+
+          <section class="step-panel" data-step="3" aria-labelledby="a3" hidden>
+            <h2 id="a3" class="h3">Clients</h2>
+            <div class="form-grid">
+              <div class="field"><label for="app-clients">Number of clients</label><select id="app-clients" data-review="Clients" required><option value="">Choose</option><option>Under 250</option><option>250–999</option><option>1,000–4,999</option><option>5,000 or more</option></select><p class="field-error" hidden>Choose one.</p></div>
+              <div class="field"><label for="app-pie">Public interest entity and listed clients</label><select id="app-pie" data-review="PIE clients" required><option value="">Choose</option><option>None</option><option>1–5</option><option>6–20</option><option>More than 20</option></select><p class="field-error" hidden>Choose one.</p></div>
+              <div class="field full"><label for="app-why">Why does your firm want to join CLA Global?</label><textarea id="app-why" rows="4" data-review="Why join"></textarea><p class="field-hint">Optional, but it helps us prepare for the next conversation.</p></div>
+            </div>
+            <div class="step-nav"><button type="button" class="btn btn-secondary" data-back>Back</button><button type="button" class="btn" data-next>Review answers</button></div>
+          </section>
+
+          <section class="step-panel" data-step="4" aria-labelledby="a4" hidden>
+            <h2 id="a4" class="h3">Review your answers</h2>
+            <dl class="kv panel" id="app-review"></dl>
+            <div class="step-nav"><button type="button" class="btn btn-secondary" data-back>Back</button><button type="button" class="btn" id="app-submit">Submit questionnaire</button></div>
+          </section>
+
+          <section class="step-panel" data-step="5" aria-labelledby="a5" hidden>
+            <div class="confirm-box">
+              <div class="tick" aria-hidden="true">✓</div>
+              <h2 id="a5" class="h3">Questionnaire received</h2>
+              <p>The membership team will review your answers and suggest dates to meet the network's leadership.</p>
+              <p><a href="join.html">Back to Join CLA Global</a></p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="panel surface">
+          <h2 class="h4">Why we ask</h2>
+          <p class="wf-meta">These answers help us understand your firm's size, services and clients, and introduce you to the right people in the network. They are kept confidential to CLA Global's membership team.</p>
+          <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Which questions does the membership team actually use to decide on a first meeting? Anything that isn't used at this stage could move to due diligence.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces CLA Global's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Firm names from claglobal.com; people, contact details and figures are sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

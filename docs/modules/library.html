@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module library — CLA Global prototypes</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
+          <li><a href="../pages/home.html" data-proto="home service industry"><span class="n">2</span> For clients</a></li>
+          <li><a href="../pages/enquiry.html" data-proto="enquiry"><span class="n">3</span> Enquiry and RFP</a></li>
+          <li><a href="../pages/join.html" data-proto="join application"><span class="n">4</span> Join CLA Global</a></li>
+          <li><a href="../pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <h1>Module library</h1>
+      <p class="lead">The new components used across the five prototypes, each shown once. Requirement numbers refer to requirements/requirements.md.</p>
+
+      <!-- Firm card (R13) -->
+      <section aria-labelledby="m1"><h2 class="section-title" id="m1">Firm card <span class="wf-req">R13</span></h2>
+        <div class="finder-results" style="max-width:720px">
+          <article class="firm-card"><div class="firm-card-top"><span class="badge solid">Network</span><span class="wf-meta">Valletta, Malta</span></div><h3><a href="../pages/firm.html?firm=cla-malta">CLA Malta</a></h3><ul class="tag-list"><li>Audit</li><li>Tax</li><li>Advisory</li><li>Outsourcing</li></ul><div class="firm-contact"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>Mark Vella</b><span>Partner</span><span class="email">mark.vella@example.com</span></div></div><div class="row firm-actions"><a class="btn btn-sm" href="../pages/enquiry.html?firm=cla-malta">Ask this firm</a><a class="btn btn-sm btn-secondary" href="../pages/firm.html?firm=cla-malta">View profile</a></div></article>
+          <article class="firm-card"><div class="firm-card-top"><span class="badge">Alliance</span><span class="wf-meta">Zurich, Switzerland</span></div><h3><a href="../pages/firm.html?firm=riedweg">Riedweg &amp; Partner AG</a></h3><ul class="tag-list"><li>Audit</li><li>Tax</li><li>Advisory</li></ul><div class="firm-contact"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>Lukas Meier</b><span>Partner</span><span class="email">lukas.meier@example.com</span></div></div><div class="row firm-actions"><a class="btn btn-sm" href="../pages/enquiry.html?firm=riedweg">Ask this firm</a><a class="btn btn-sm btn-secondary" href="../pages/firm.html?firm=riedweg">View profile</a></div></article>
+        </div>
+      </section>
+
+      <!-- Insight row (R50) -->
+      <section aria-labelledby="m2"><h2 class="section-title" id="m2">Insight row <span class="wf-req">R50</span></h2>
+        <div class="insight-list" style="max-width:760px">
+          <article class="insight-row"><div class="wf-placeholder ratio-16-9" aria-hidden="true">Image</div><div class="insight-body"><div class="insight-meta"><span class="badge">Case study</span><span>20 July 2026</span><span class="badge sample">Sample</span></div><h3><a href="../pages/article.html?id=case-mx-us">Setting up a US subsidiary for a Mexican manufacturer in five months</a></h3><p class="wf-meta">CLA Mexico · Mexico · Tax</p></div></article>
+        </div>
+      </section>
+
+      <!-- Route panels (R20) -->
+      <section aria-labelledby="m3"><h2 class="section-title" id="m3">Audience routes <span class="wf-req">R20</span></h2>
+        <div class="routes"><div class="route"><h2>Find help in another country</h2><p>Country search and service, leading into the finder.</p></div><div class="route"><h2>Grow your firm with CLA Global</h2><p>Leads to the join page and Members Hub.</p></div></div>
+      </section>
+
+      <!-- Stepper + option card (R30) -->
+      <section aria-labelledby="m4"><h2 class="section-title" id="m4">Stepper and option cards <span class="wf-req">R30, R32</span></h2>
+        <ol class="stepper four" aria-label="Example progress"><li class="done">Where and what</li><li class="current">Who can help</li><li>Your details</li><li>Sent</li></ol>
+        <div class="option-cards" style="max-width:720px"><label class="option-card"><input type="radio" name="lib-o" checked><strong>CLA Emirates <span class="badge solid">Network</span></strong><span>Sara Khalil, Tax Director · Dubai</span></label><label class="option-card"><input type="radio" name="lib-o"><strong>Coordinate it through CLA Global</strong><span>One lead contact for several countries.</span></label></div>
+      </section>
+
+      <!-- Comparison table (R41) -->
+      <section aria-labelledby="m5"><h2 class="section-title" id="m5">Comparison table <span class="wf-req">R41</span></h2>
+        <div class="table-wrap"><table class="cmp-table"><thead><tr><th scope="col">&nbsp;</th><th scope="col">Network member</th><th scope="col">Alliance member</th></tr></thead><tbody><tr><th scope="row">Name and brand</th><td>CLA Global name</td><td>Own name</td></tr></tbody></table></div>
+      </section>
+
+      <!-- Timeline (R45) -->
+      <section aria-labelledby="m6"><h2 class="section-title" id="m6">Timeline <span class="wf-req">R45</span></h2>
+        <ol class="timeline" style="max-width:520px"><li><b>July 2022</b><p>CLA Global founded.</p></li><li><b>January 2026</b><p>Member of the Forum of Firms.</p></li></ol>
+      </section>
+
+      <!-- Bar chart (R53) -->
+      <section aria-labelledby="m7"><h2 class="section-title" id="m7">Report bar chart <span class="wf-req">R53</span></h2>
+        <div class="rbars" style="max-width:760px"><div class="rbar"><span class="rbar-label">Plan to enter a new country</span><span class="rbar-track"><span class="rbar-fill" style="width:62%"></span></span><b>62%</b></div></div>
+        <p class="wf-meta">Sample figure.</p>
+      </section>
+
+      <!-- Annotation layer -->
+      <section aria-labelledby="m8"><h2 class="section-title" id="m8">Notes</h2>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Yellow notes describe behaviour a screenshot can't show.</p>
+        <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Red notes are questions for CLA Global.</p>
+      </section>
+    </div>
+  </main>
+  <!-- Prototype pager (replaces CLA Global's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Firm names from claglobal.com; people, contact details and figures are sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

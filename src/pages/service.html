@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service page — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Service page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Each service page lists its specialisms as real sections with their own headings, names three people who lead the service in member firms, says how many firms offer it and where, and shows the latest related insights. Every specialism links to the firms that offer it.</p></div>
+          <div><h2>Why</h2><p>The Tax page mentions transfer pricing, global mobility and indirect tax, but as bullet points and bold text inside one long page. Audit, Tax and Outsourcing each have two headings in total: the page title and "Contact Us". Only Advisory names anyone. A finance director comparing networks wants to know who does the work and in which countries, and at the moment the page can't tell them.</p></div>
+        </div>
+        <p class="proposal-foot">Tax is written out in full. The other three services use the same template with placeholder copy: try the service links under the title.</p>
+      </div>
+    </aside>
+
+    <div id="service-app">
+      <div class="page-head">
+        <div class="container">
+          <p class="eyebrow">What we do</p>
+          <h1 data-s="name">Service</h1>
+          <p class="lead" id="service-intro"></p>
+          <ul class="service-switch" aria-label="Other services">
+            <li><a href="service.html?service=audit">Audit</a></li>
+            <li><a href="service.html?service=tax">Tax</a></li>
+            <li><a href="service.html?service=advisory">Advisory</a></li>
+            <li><a href="service.html?service=outsourcing">Outsourcing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top:2rem">
+        <div class="service-layout">
+          <nav class="service-nav" aria-label="On this page"><ul id="service-nav"></ul></nav>
+          <div>
+            <!-- Sub-services (R27) -->
+            <div id="service-subs"></div>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">CMS</span>Each specialism is its own block with a heading, so it can be linked to, reordered or given its own page later if it grows.</p>
+
+            <!-- Experts (R28) -->
+            <section aria-labelledby="exp-title">
+              <h2 class="section-title" id="exp-title">Talk to a specialist</h2>
+              <div class="people-list" id="service-experts"></div>
+              <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Who chooses the three people per service, and do they rotate? One option is the chair of each service line group plus two partners from different regions.</p>
+            </section>
+
+            <!-- Coverage (R27) -->
+            <section class="panel surface" aria-label="Where this service is offered">
+              <p style="margin:0" id="service-firms"></p>
+            </section>
+
+            <!-- Related insights (R29) -->
+            <section aria-labelledby="sins-title" style="margin-top:3rem">
+              <h2 class="section-title" id="sins-title">Latest on <span data-s="name">this service</span></h2>
+              <div class="insight-list" id="service-insights"></div>
+            </section>
+
+            <div class="panel" style="display:grid;gap:0.75rem">
+              <h2 class="h3" style="margin:0">Need <span data-s="name">this</span> help in more than one country?</h2>
+              <p style="margin:0">Tell us where and the network will put one team together, with one lead contact.</p>
+              <div><a class="btn" href="enquiry.html" data-s-href="enquiry.html?service=">Start an enquiry</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

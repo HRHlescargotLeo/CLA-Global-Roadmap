@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 5 · Article page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Articles that lead somewhere. The author gets a card with their firm and country and a button to talk to that firm, tags link back into the filtered hub, related pieces follow, and the long legal disclaimer folds away.</p></div>
+          <div><h2>Why</h2><p>Today an article links its authors only to their LinkedIn profiles and ends with a long disclaimer. A reader who has just learned that Malta is introducing domestic e-invoicing has no route to the firm that wrote about it, which is a shame, because that reader is about as qualified a lead as the site will get.</p></div>
+        </div>
+        <p class="proposal-foot">Article text is not reproduced; headings are from the live Malta article. Try another article from the Insights hub.</p>
+      </div>
+    </aside>
+
+    <div id="article-app">
+      <div class="page-head">
+        <div class="container">
+          <p class="eyebrow"><a href="insights.html">Insights</a> › <span id="art-type">Article</span> · <span id="art-date"></span></p>
+          <h1 id="art-title">Article title</h1>
+          <ul class="tag-list" id="art-tags" aria-label="Topics"></ul>
+        </div>
+      </div>
+      <div class="container" style="padding-top:2rem">
+        <div class="article-layout">
+          <article>
+            <div class="wf-placeholder ratio-16-9" style="margin-bottom:1.5rem">Image 16:9</div>
+            <div class="article-body" id="art-body"></div>
+            <div class="accordion" style="margin-top:2rem">
+              <div class="accordion-item"><button type="button" class="accordion-title">Disclaimer<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p class="wf-meta">[The existing CLA Global disclaimer, unchanged, folded away by default.]</p></div></div>
+            </div>
+          </article>
+          <aside class="stack">
+            <div class="panel author-card"><h2 class="h4" style="margin:0">Written by</h2><div id="art-author"></div></div>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The author card comes from the firm profile, so a change of role or email updates every article at once.</p>
+            <div class="panel surface signup-panel"><h2 class="h4" style="margin:0">More like this by email</h2><button type="button" class="btn btn-secondary" data-toast="Opens the email sign-up with this topic ticked">Sign up</button></div>
+            <div class="row"><a href="#" class="btn btn-sm btn-secondary">Share on LinkedIn</a><a href="#" class="btn btn-sm btn-secondary">Copy link</a></div>
+          </aside>
+        </div>
+        <section aria-labelledby="rel-title" style="margin-top:3rem">
+          <h2 class="section-title" id="rel-title">Related insights</h2>
+          <div class="insight-grid" id="art-related"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

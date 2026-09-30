@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry and proposal request — CLA Global prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
+          <li><a href="../pages/home.html" data-proto="home service industry"><span class="n">2</span> For clients</a></li>
+          <li><a href="../pages/enquiry.html" data-proto="enquiry"><span class="n">3</span> Enquiry and RFP</a></li>
+          <li><a href="../pages/join.html" data-proto="join application"><span class="n">4</span> Join CLA Global</a></li>
+          <li><a href="../pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 5 · Cross-border enquiry and RFP</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>An enquiry that starts with where the client needs help and what with, then shows the member firms and named contacts who cover it before asking for any personal details. The client can contact one firm directly or let CLA Global coordinate. The same flow handles a request for proposal, with a timeline, a deadline and a document upload, and it ends by saying who will reply and when.</p></div>
+          <div><h2>Why</h2><p>Clients, journalists and firms that want to join all share one HubSpot form today. For a client it is ten fields, eight of them required, including phone number and "How did you find out about us?", and nothing on the page says who replies or when. It asks for the visitor's own country but not the countries they need help in, so every enquiry has to be read and routed by hand in the global office. Showing the right contacts first will cut that, and some clients will simply email the partner, which is arguably the better outcome anyway.</p></div>
+        </div>
+        <p class="proposal-foot">Try it from a firm profile ("Ask this firm") to see the firm carried through, or from here with two or three countries.</p>
+      </div>
+    </aside>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow">Contact us</p>
+        <h1>Tell us where you need help</h1>
+        <p class="lead">Choose the countries and services, and we'll show you who covers them. For media enquiries, see the <a href="#">press room</a>. Firms interested in membership, see <a href="join.html">Join CLA Global</a>.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:2rem">
+      <div class="enq-layout">
+        <div id="enq-app">
+          <ol class="stepper four" aria-label="Progress">
+            <li class="current">Where and what</li>
+            <li>Who can help</li>
+            <li>Your details</li>
+            <li>Sent</li>
+          </ol>
+
+          <!-- Step 1 (R30, R31) -->
+          <section class="step-panel" data-step="1" aria-labelledby="s1">
+            <h2 id="s1" class="h3">Where and what</h2>
+            <p class="context-line" id="enq-context" hidden>Starting with <b><span></span></b>. Add more countries if you need them.</p>
+            <div class="field">
+              <label for="enq-country">Which countries do you need help in?</label>
+              <div class="country-add"><input type="text" id="enq-country" list="enq-countries" placeholder="Start typing a country" autocomplete="off"><button type="button" class="btn btn-secondary" id="enq-add">Add</button></div>
+              <datalist id="enq-countries"></datalist>
+              <div class="quick">Common: <button type="button" class="chip" data-quick="United States">United States</button><button type="button" class="chip" data-quick="United Kingdom">United Kingdom</button><button type="button" class="chip" data-quick="Germany">Germany</button><button type="button" class="chip" data-quick="United Arab Emirates">United Arab Emirates</button></div>
+              <div class="chosen" id="enq-country-chips" aria-live="polite"></div>
+              <p class="field-error" hidden>Add at least one country.</p>
+            </div>
+            <fieldset id="enq-service-set">
+              <legend>What do you need help with?</legend>
+              <div class="check-grid">
+                <label class="check"><input type="checkbox" name="enq-service" value="Audit"> Audit and assurance</label>
+                <label class="check"><input type="checkbox" name="enq-service" value="Tax"> Tax</label>
+                <label class="check"><input type="checkbox" name="enq-service" value="Advisory"> Advisory</label>
+                <label class="check"><input type="checkbox" name="enq-service" value="Outsourcing"> Outsourcing, payroll and accounting</label>
+              </div>
+              <p class="field-error" hidden>Choose at least one service.</p>
+            </fieldset>
+            <fieldset>
+              <legend>What would you like to do?</legend>
+              <div class="option-cards">
+                <label class="option-card"><input type="radio" name="enq-kind" value="question" checked><strong>Ask a question</strong><span>Get in touch with the right people. Usually a reply within two working days.</span></label>
+                <label class="option-card"><input type="radio" name="enq-kind" value="proposal"><strong>Request a proposal</strong><span>For defined work across one or more countries, with a timeline and documents.</span></label>
+              </div>
+            </fieldset>
+            <div class="step-nav"><span></span><button type="button" class="btn" id="enq-next-1">Show who can help</button></div>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Nothing personal is asked for until step 3. The countries list offers every country with a member firm, but any country can be typed in.</p>
+          </section>
+
+          <!-- Step 2 (R32, R33) -->
+          <section class="step-panel" data-step="2" aria-labelledby="s2" hidden>
+            <h2 id="s2" class="h3">Who can help</h2>
+            <p id="enq-match-lead"></p>
+            <div id="enq-matches"></div>
+            <div class="step-nav"><button type="button" class="btn btn-secondary" data-back>Back</button><button type="button" class="btn" id="enq-next-2">Continue</button></div>
+            <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Shows up to two firms per country, network firms first, preferring firms that list every service chosen. Contact details are visible here, so a client can simply email the partner.</p>
+          </section>
+
+          <!-- Step 3 (R34, R35) -->
+          <section class="step-panel" data-step="3" aria-labelledby="s3" hidden>
+            <h2 id="s3" class="h3">Your details</h2>
+            <p>Your <span data-question>enquiry</span><span data-rfp hidden>proposal request</span> will go to <b id="enq-to">the right firm</b>.</p>
+            <form id="enq-form" novalidate>
+              <div class="form-grid">
+                <div class="field"><label for="enq-first">First name</label><input type="text" id="enq-first" autocomplete="given-name" required><p class="field-error" hidden>Enter your first name.</p></div>
+                <div class="field"><label for="enq-last">Last name</label><input type="text" id="enq-last" autocomplete="family-name" required><p class="field-error" hidden>Enter your last name.</p></div>
+                <div class="field"><label for="enq-email">Work email</label><input type="email" id="enq-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@company.com.</p></div>
+                <div class="field"><label for="enq-company">Company</label><input type="text" id="enq-company" autocomplete="organization" required><p class="field-error" hidden>Enter your company name.</p></div>
+                <div class="field"><label for="enq-phone">Phone <span class="wf-meta">(optional)</span></label><input type="tel" id="enq-phone" autocomplete="tel"></div>
+                <div class="field" data-rfp hidden><label for="enq-deadline">Proposal needed by</label><input type="date" id="enq-deadline" required><p class="field-error" hidden>Choose a date.</p></div>
+                <div class="field full" data-rfp hidden><label for="enq-start">When would the work start?</label><select id="enq-start" required><option value="">Choose</option><option>Within a month</option><option>In one to three months</option><option>In three to six months</option><option>Not decided yet</option></select><p class="field-error" hidden>Choose when the work would start.</p></div>
+                <div class="field full"><label for="enq-msg"><span data-question>How can we help?</span><span data-rfp hidden>Describe the work</span></label><textarea id="enq-msg" rows="5" required></textarea><p class="field-error" hidden>Tell us a little about what you need.</p></div>
+                <div class="field full" data-rfp hidden><span class="eyebrow">Documents <span class="wf-meta">(optional)</span></span><div class="file-drop"><input type="file" id="enq-file" aria-label="Attach a document"><span class="wf-meta" id="enq-file-name">No file chosen</span></div><p class="field-hint">PDF, Word or Excel, up to 20MB.</p></div>
+                <div class="field full"><label class="check"><input type="checkbox" id="enq-consent" required> I agree that CLA Global and the member firms named may use these details to reply to me, as set out in the <a href="#">privacy policy</a>.</label><p class="field-error" hidden>Please agree so we can reply.</p></div>
+              </div>
+              <div class="step-nav"><button type="button" class="btn btn-secondary" data-back>Back</button><button type="submit" class="btn">Send</button></div>
+            </form>
+            <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Five required fields for a question and seven for a proposal, plus the consent box. Does the global office need anything else to route or qualify an enquiry? "How did you hear about us?" has moved to an optional question on the confirmation page.</p>
+          </section>
+
+          <!-- Step 4 (R36) -->
+          <section class="step-panel" data-step="4" aria-labelledby="s4" hidden>
+            <div class="confirm-box">
+              <div class="tick" aria-hidden="true">✓</div>
+              <h2 id="s4" class="h3">Thank you, <span id="enq-done-name"></span></h2>
+              <p>Your <span id="enq-done-kind">enquiry</span> about <b id="enq-done-services"></b> in <b id="enq-done-where"></b> has been sent.</p>
+              <ol class="next-steps">
+                <li><span><b id="enq-done-who"></b> will reply by email within two working days.</span></li>
+                <li><span>If more than one firm is involved, you'll have one lead contact who brings the others in.</span></li>
+                <li><span>We've emailed you a copy with the contact details, so you can reply to them directly.</span></li>
+              </ol>
+              <p class="wf-meta" style="margin-top:1.25rem">Optional: how did you hear about CLA Global? <a href="#">Search</a> · <a href="#">LinkedIn</a> · <a href="#">A recommendation</a> · <a href="#">Other</a></p>
+              <p class="wf-note query" data-note="4" style="text-align:left"><span class="wf-note-label">Open question</span>Is two working days a promise member firms can keep? Any commitment shown here needs agreeing with them first.</p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="panel surface">
+          <h2 class="h4">Prefer to talk to the global office?</h2>
+          <p>CLA Global, Floor 3, 8 Bishopsgate, London EC2N 4BQ</p>
+          <p class="wf-meta">[Phone number] · [Email address]</p>
+          <p class="wf-meta" style="margin:0">CLA Global does not provide services to clients itself. Services are provided by member firms, each a separate and independent legal entity.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces CLA Global's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Firm names from claglobal.com; people, contact details and figures are sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

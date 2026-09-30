@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a firm — CLA Global prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
+          <li><a href="../pages/home.html" data-proto="home service industry"><span class="n">2</span> For clients</a></li>
+          <li><a href="../pages/enquiry.html" data-proto="enquiry"><span class="n">3</span> Enquiry and RFP</a></li>
+          <li><a href="../pages/join.html" data-proto="join application"><span class="n">4</span> Join CLA Global</a></li>
+          <li><a href="../pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 1 of 5 · Find a CLA Global firm</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>One directory for every network and alliance firm, searchable by country, city or name and filtered by region, service and industry, with a map. Each result shows who to contact, and every firm gets a profile page with its people, services, industries, a short guide to doing business in that country and its latest insights.</p></div>
+          <div><h2>Why</h2><p>Today the firms sit on two separate lists, 23 network entries on one page and 34 alliance entries on another, with no search, filter or map. On a phone the network list alone runs to about seven screens. The address, email and phone fields on every card are empty, so the only way to find a person is to open each profile in turn. The profiles themselves hold good data (contacts, services, industries, headcount), so most of what this needs already exists in the CMS. It just isn't being put to work.</p></div>
+        </div>
+        <p class="proposal-foot">Firm names, countries and cities are from claglobal.com. Contacts, services, industries and figures are sample data.</p>
+      </div>
+    </aside>
+
+    <!-- Page head and search (R10) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow">Locations</p>
+        <h1>Find a CLA Global firm</h1>
+        <p class="lead">Network and alliance member firms in <span data-country-count>26</span> countries. Search by country, city or firm, then narrow by service or industry.</p>
+        <form class="finder-search" id="ff-form" role="search" style="margin-top:1.25rem">
+          <div class="field">
+            <label for="ff-q">Country, city or firm name</label>
+            <input type="search" id="ff-q" list="ff-countries" placeholder="For example Germany, Dubai or S&amp;W" autocomplete="off">
+            <datalist id="ff-countries"></datalist>
+          </div>
+          <button class="btn" type="submit">Search</button>
+        </form>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Results update as you type. Country names autocomplete. The search also matches city and contact names, so "Dubai" or a partner's surname both work.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <div id="finder-app">
+        <div class="finder">
+          <!-- Filters (R11) -->
+          <button type="button" class="btn btn-secondary filter-toggle" id="ff-filter-toggle" aria-expanded="false" aria-controls="ff-filters">Filters</button>
+          <aside class="finder-filters" id="ff-filters" aria-label="Filter firms">
+            <div class="field full">
+              <span class="eyebrow" id="type-label">Membership</span>
+              <div class="seg" role="group" aria-labelledby="type-label">
+                <button type="button" data-type="" aria-pressed="true">All</button>
+                <button type="button" data-type="Network" aria-pressed="false">Network</button>
+                <button type="button" data-type="Alliance" aria-pressed="false">Alliance</button>
+              </div>
+            </div>
+            <div class="field"><label for="ff-region">Region</label><select id="ff-region"></select></div>
+            <div class="field"><label for="ff-service">Service</label><select id="ff-service"></select></div>
+            <div class="field"><label for="ff-industry">Industry</label><select id="ff-industry"></select></div>
+            <details class="full">
+              <summary>Network or alliance?</summary>
+              <p class="wf-meta" style="margin-top:0.5rem">Network firms carry the CLA Global name and brand. Alliance firms are independent firms with access to the network's reach, under their own name. Both work with each other on client matters.</p>
+            </details>
+            <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Network and alliance firms appear in one list, labelled. Filters combine, and the current search is kept in the page address so it can be shared.</p>
+          </aside>
+
+          <div class="finder-main">
+            <div class="results-toolbar" style="margin-top:0">
+              <p class="result-count" id="ff-count" aria-live="polite" style="margin:0">Loading firms…</p>
+              <div class="seg" role="group" aria-label="View">
+                <button type="button" data-view="list" aria-pressed="true">List</button>
+                <button type="button" data-view="map" aria-pressed="false">Map</button>
+              </div>
+            </div>
+            <div class="active-filters" id="ff-active" style="margin-bottom:1rem"></div>
+
+            <!-- Map (R12) -->
+            <div class="map-canvas" id="ff-map">
+              <div class="wf-placeholder">Map · pins show countries with member firms</div>
+              <div class="map-zoom seg" role="group" aria-label="Zoom the map to a region">
+                <button type="button" data-zoom="" aria-pressed="true">World</button>
+                <button type="button" data-zoom="Americas" aria-pressed="false">Americas</button>
+                <button type="button" data-zoom="Europe" aria-pressed="false">Europe</button>
+                <button type="button" data-zoom="Middle East and Africa" aria-pressed="false">Middle East and Africa</button>
+                <button type="button" data-zoom="Asia Pacific" aria-pressed="false">Asia Pacific</button>
+              </div>
+              <div class="map-pins"></div>
+            </div>
+            <div class="map-legend" id="ff-map-countries" aria-label="Countries on the map"></div>
+            <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Map provider to be agreed (for example Mapbox or Google Maps). The map zooms to fit the current results. Clicking a pin, or a country name under the map, filters the list to that country; clicking it again clears the filter.</p>
+
+            <!-- Results (R13) -->
+            <div class="finder-results" id="ff-results"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces CLA Global's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Firm names from claglobal.com; people, contact details and figures are sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

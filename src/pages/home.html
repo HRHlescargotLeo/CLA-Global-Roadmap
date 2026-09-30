@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage for clients and firms — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · A front door for clients</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A homepage that serves both audiences from the first screen: a firm search for businesses that need help abroad, and a clear route for firms thinking of joining. Below that, the four services, industry pages, client case studies and the latest insights, with the headline numbers written into the page. The prototype also includes a <a href="service.html?service=tax">service page</a> and an <a href="industry.html">industry page</a> built the same way.</p></div>
+          <div><h2>Why</h2><p>The current homepage is, in effect, a recruitment page. "Why Join CLA Global?" appears twice, followed by member benefits, a join video and "Become a Member". A mid-market business looking for an adviser in another country gets four insight cards and nothing else, and those show March to July, oldest first. The positioning is all about clients with cross-border needs, so the homepage ought to have something for them. The recruitment case doesn't disappear; it moves to its own route and a much stronger <a href="join.html">join page</a>.</p></div>
+        </div>
+        <p class="proposal-foot">Headline figures are from claglobal.com; the country count is taken from its network and alliance lists. Case studies are sample content.</p>
+      </div>
+    </aside>
+
+    <!-- Hero with two routes (R20) -->
+    <div class="home-hero">
+      <div class="container">
+        <p class="eyebrow">CLA Global</p>
+        <h1>Accountants and advisers for growing businesses, wherever you trade</h1>
+        <p class="lead">Independent member firms in <span data-country-count>26</span> countries, working together for privately owned, mid-market businesses with cross-border needs.</p>
+        <div class="routes">
+          <div class="route">
+            <h2>Find help in another country</h2>
+            <form class="route-form" id="home-find" role="search">
+              <div class="field"><label for="home-q">Where do you need help?</label><input type="search" id="home-q" list="home-countries" placeholder="Country or city" autocomplete="off"><datalist id="home-countries"></datalist></div>
+              <div class="field"><label for="home-service">Service</label><select id="home-service"><option value="">Any service</option><option value="audit">Audit</option><option value="tax">Tax</option><option value="advisory">Advisory</option><option value="outsourcing">Outsourcing</option></select></div>
+              <button class="btn" type="submit">Find a firm</button>
+            </form>
+            <p class="wf-meta">Working across several countries? <a href="enquiry.html">Send one enquiry to the network</a></p>
+          </div>
+          <div class="route">
+            <h2>Grow your firm with CLA Global</h2>
+            <p>For independent firms that want international reach, shared investment and a brand with momentum.</p>
+            <div class="row"><a class="btn btn-secondary" href="join.html">Why join</a><a class="btn btn-secondary" href="#">Members Hub login</a></div>
+          </div>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The search takes a visitor straight into the firm finder with their country and service already applied. The join route keeps the Members Hub login close, as it is in today's header.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:2.5rem">
+      <!-- Numbers (R21) -->
+      <section aria-labelledby="num-title">
+        <h2 class="visually-hidden" id="num-title">The network in numbers</h2>
+        <div class="statistics">
+          <div class="stat-item"><div class="stat-value">15,000+</div><div class="stat-title">people</div></div>
+          <div class="stat-item"><div class="stat-value">235+</div><div class="stat-title">offices</div></div>
+          <div class="stat-item"><div class="stat-value">1,600+</div><div class="stat-title">partners and equivalents</div></div>
+          <div class="stat-item"><div class="stat-value" data-country-count>26</div><div class="stat-title">countries</div></div>
+        </div>
+        <p class="wf-note" data-note="2"><span class="wf-note-label">Technical</span>Figures are written into the page HTML. Today they read "0+" until JavaScript counts them up, which is what search engines and link previews see. A count-up can stay as an enhancement.</p>
+      </section>
+
+      <!-- Services (R22) -->
+      <section aria-labelledby="svc-title">
+        <h2 class="section-title" id="svc-title">How member firms help</h2>
+        <div class="grid grid-4">
+          <a class="card" href="service.html?service=audit"><h3 class="card-title">Audit</h3><p class="card-text">Statutory audit, assurance and IFRS reporting, coordinated across your group.</p><span class="card-link">Audit services</span></a>
+          <a class="card" href="service.html?service=tax"><h3 class="card-title">Tax</h3><p class="card-text">Corporate and cross-border tax, transfer pricing, indirect tax and global mobility.</p><span class="card-link">Tax services</span></a>
+          <a class="card" href="service.html?service=advisory"><h3 class="card-title">Advisory</h3><p class="card-text">Digital and cyber, ESG, transactions, restructuring and forensics.</p><span class="card-link">Advisory services</span></a>
+          <a class="card" href="service.html?service=outsourcing"><h3 class="card-title">Outsourcing</h3><p class="card-text">Accounting, payroll, HR and IT support that scales as you grow.</p><span class="card-link">Outsourcing services</span></a>
+        </div>
+      </section>
+
+      <!-- Industries (R23) -->
+      <section aria-labelledby="ind-title">
+        <h2 class="section-title" id="ind-title">Industries</h2>
+        <ul class="link-grid">
+          <li><a href="industry.html?industry=Manufacturing%20and%20distribution">Manufacturing and distribution</a></li>
+          <li><a href="industry.html?industry=Technology">Technology</a></li>
+          <li><a href="industry.html?industry=Financial%20services">Financial services</a></li>
+          <li><a href="industry.html?industry=Consumer%20products">Consumer products</a></li>
+          <li><a href="industry.html?industry=Life%20sciences%20and%20healthcare">Life sciences and healthcare</a></li>
+          <li><a href="industry.html?industry=Energy%20and%20natural%20resources">Energy and natural resources</a></li>
+          <li><a href="industry.html?industry=Professional%20services">Professional services</a></li>
+          <li><a href="industry.html?industry=Hospitality%20and%20leisure">Hospitality and leisure</a></li>
+        </ul>
+        <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Which industries should get pages first? These are the ones member firms list most often on their profiles today.</p>
+      </section>
+
+      <!-- Case studies (R24) -->
+      <section aria-labelledby="case-title">
+        <h2 class="section-title" id="case-title">Client stories</h2>
+        <div class="carousel" aria-label="Client stories">
+          <div class="carousel-track">
+            <div class="carousel-item"><div class="wf-placeholder ratio-16-9">Image 16:9</div><div><p class="eyebrow">Case study · Sample</p><h3>Setting up a US subsidiary for a Mexican manufacturer in five months</h3><p>CLA Mexico and CliftonLarsonAllen worked as one team on entity set-up, transfer pricing and the first US audit.</p><a href="article.html?id=case-mx-us">Read the story</a></div></div>
+            <div class="carousel-item"><div class="wf-placeholder ratio-16-9">Image 16:9</div><div><p class="eyebrow">Case study · Sample</p><h3>One audit timetable for a UK retailer with subsidiaries in Spain and Ireland</h3><p>S&amp;W led the group audit, with CLA Spain and S&amp;W Ireland reporting to one plan and one deadline.</p><a href="article.html?id=case-uk-es">Read the story</a></div></div>
+            <div class="carousel-item"><div class="wf-placeholder ratio-16-9">Image 16:9</div><div><p class="eyebrow">Case study · Sample</p><h3>Outsourced payroll for a fintech hiring in Singapore and Malaysia</h3><p>CLA Global TS ran payroll and employment compliance in both countries through one contact.</p><a href="article.html?id=case-sg-my">Read the story</a></div></div>
+          </div>
+          <div class="carousel-controls"><button type="button" class="carousel-arrow" data-dir="prev" aria-label="Previous story">‹</button><button type="button" class="carousel-arrow" data-dir="next" aria-label="Next story">›</button></div>
+          <div class="carousel-indicators"></div>
+        </div>
+        <p class="wf-note query" data-note="4"><span class="wf-note-label">Open question</span>These stories are invented to show the format. Real ones need a client's permission; could member firms each put forward one to start?</p>
+      </section>
+
+      <!-- Latest insights (R25) -->
+      <section aria-labelledby="latest-title">
+        <div class="row between"><h2 class="section-title" id="latest-title" style="flex:1">Latest insights</h2></div>
+        <div class="insight-grid" id="home-latest"></div>
+        <p style="margin-top:1rem"><a class="btn btn-secondary" href="insights.html">All insights</a></p>
+        <p class="wf-note" data-note="5"><span class="wf-note-label">Behaviour</span>Always the newest three, pulled automatically, newest first.</p>
+      </section>
+
+      <!-- Recognition (R26) -->
+      <section aria-labelledby="rec-title">
+        <h2 class="section-title" id="rec-title">Recognition</h2>
+        <div class="proof-strip">
+          <div class="panel"><span class="wf-placeholder">Logo</span><p class="wf-meta" style="margin:0"><b>Forum of Firms</b><br>Member since January 2026</p></div>
+          <div class="panel"><span class="wf-placeholder">Logo</span><p class="wf-meta" style="margin:0"><b>[Ranking]</b><br>[Source and year]</p></div>
+          <div class="panel"><span class="wf-placeholder">Logo</span><p class="wf-meta" style="margin:0"><b>[Award or listing]</b><br>[Source and year]</p></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>
