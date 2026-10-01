@@ -1,7 +1,388 @@
 /* ==========================================================================
-   theme.css — design layer (empty in phase 2)
+   theme.css — CLA Global design layer (V2)
 
-   The greyscale prototypes deliberately carry no CLA Global colour or type.
-   Phase 3 applies the CLA Global design system here, and only here, so
-   deleting this file will always return the pack to greyscale.
+   Applies the CLA Global design system (measured from claglobal.com on
+   30 Sep 2026) on top of the structural prototype CSS. Nothing in base.css,
+   components.css or the pages depends on this file: remove it and the pack
+   returns to the greyscale prototypes (photos.js also switches itself off).
+
+   Type: claglobal.com uses Georgia for headings and Museo Sans (licensed)
+   for text. Nunito Sans stands in for Museo Sans until we have the files.
+   Imagery: CLA Global photography via photos.js; where it can't load, the
+   illustrated city placeholders below show instead.
    ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700&display=swap');
+
+:root {
+  --cla-theme: 1;                 /* read by photos.js */
+
+  /* CLA Global palette */
+  --cla-navy: #2E334E;
+  --cla-nav-blue: #2D3C59;
+  --cla-deep: #1E2A39;
+  --cla-riptide: #7DD2D3;         /* on navy only as text */
+  --cla-riptide-dark: #2A787A;    /* riptide for text on light grounds */
+  --cla-riptide-mid: #64A8A9;
+  --cla-riptide-tint: #E5F6F6;
+  --cla-gold: #F1BE4B;
+  --cla-text: #333333;
+  --cla-grey: #676767;
+  --cla-off-white: #F7F7F6;
+  --cla-rule: #DEDEDE;
+  --cla-white: #FFFFFF;
+  --cla-on-navy: #D6DAE6;
+
+  --cla-display: Georgia, "Times New Roman", serif;
+  --cla-body: "Museo Sans", "Nunito Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+
+  /* Map the prototype tokens onto the brand */
+  --wf-page: var(--cla-white);
+  --wf-surface: var(--cla-off-white);
+  --wf-placeholder: var(--cla-riptide-tint);
+  --wf-border: var(--cla-rule);
+  --wf-border-strong: var(--cla-navy);
+  --wf-text: var(--cla-text);
+  --wf-text-muted: var(--cla-grey);
+  --wf-action: var(--cla-navy);
+  --wf-action-hover: var(--cla-deep);
+  --wf-note-bg: #FDF5E1;
+  --wf-note-border: #C99415;
+  --wf-note-query-bg: #FCEDEB;
+  --wf-note-query-border: #B3261E;
+  --wf-radius: 3px;
+  --wf-max-width: 1188px;         /* 1140px content + gutters, as on claglobal.com */
+}
+
+/* --------------------------------------------------------------------------
+   Base type: Georgia headings, light sans text
+   -------------------------------------------------------------------------- */
+body { font-family: var(--cla-body); font-weight: 300; font-size: 1.0625rem; line-height: 1.6; color: var(--cla-text); -webkit-font-smoothing: antialiased; }
+b, strong, label, legend, th { font-weight: 600; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--cla-display); font-weight: 400; letter-spacing: 0; text-wrap: balance; color: var(--cla-navy); }
+h1 { font-size: clamp(2.25rem, 4.4vw, 3.5625rem); line-height: 1.1; }
+h2 { font-size: clamp(1.625rem, 2.6vw, 2.25rem); line-height: 1.1; }
+h3 { font-size: 1.5rem; line-height: 1.2; }
+h4, .h4 { font-size: 1.25rem; }
+.h3 { font-size: 1.625rem; }
+.lead { font-size: 1.25rem; line-height: 1.55; font-weight: 300; }
+a { color: var(--cla-riptide-dark); text-underline-offset: 3px; }
+a:hover { color: var(--cla-navy); }
+:focus-visible { outline: 3px solid var(--cla-riptide-dark); outline-offset: 3px; }
+.muted, .wf-meta, small { color: var(--cla-grey); }
+.eyebrow { font-family: var(--cla-body); font-weight: 400; font-size: 0.8125rem; letter-spacing: 2.3px; color: var(--cla-riptide-dark); }
+
+.section-title { font-size: clamp(1.75rem, 2.8vw, 2.25rem); border-bottom: 0; padding-bottom: 0; margin-bottom: 1.75rem; }
+.section-title::before { content: ''; display: block; width: 56px; height: 5px; background: var(--cla-riptide); margin-bottom: 1rem; }
+main section { margin-bottom: 4.5rem; }
+
+/* --------------------------------------------------------------------------
+   Buttons: 2px border, 3px radius, swap to white on hover (as on the live site)
+   -------------------------------------------------------------------------- */
+.btn {
+  background: var(--cla-navy); color: var(--cla-white); border: 2px solid var(--cla-navy); border-radius: 3px;
+  font-family: var(--cla-body); font-weight: 400; font-size: 0.9375rem; line-height: 1.5; padding: 0.625rem 1.375rem;
+  text-decoration: none; transition: background 0.15s, color 0.15s;
+}
+.btn:hover { background: var(--cla-white); color: var(--cla-navy); text-decoration: none; }
+.btn-secondary { background: var(--cla-white); color: var(--cla-navy); }
+.btn-secondary:hover { background: var(--cla-navy); color: var(--cla-white); }
+.btn-sm { padding: 0.375rem 0.875rem; font-size: 0.875rem; }
+.btn-link { color: var(--cla-riptide-dark); font-weight: 600; }
+/* The live site keeps riptide for joining; so do we */
+.btn[href*="join.html"], .btn[href="#eoi"], #eoi-form .btn, .proto-card:nth-child(4) .btn { background: var(--cla-riptide); border-color: var(--cla-riptide); color: var(--cla-navy); }
+.btn[href*="join.html"]:hover, .btn[href="#eoi"]:hover, #eoi-form .btn:hover, .proto-card:nth-child(4) .btn:hover { background: var(--cla-white); color: var(--cla-navy); }
+.chip { border-radius: 999px; border: 1px solid var(--cla-navy); color: var(--cla-navy); background: var(--cla-white); font-weight: 400; }
+.chip[aria-pressed="true"] { background: var(--cla-navy); color: var(--cla-white); border-color: var(--cla-navy); box-shadow: none; font-weight: 400; }
+.badge { border-radius: 3px; border: 1px solid var(--cla-riptide-dark); color: var(--cla-riptide-dark); background: var(--cla-white); font-family: var(--cla-body); font-weight: 600; letter-spacing: 1.5px; font-size: 0.6875rem; padding: 0.25rem 0.5rem; }
+.badge.solid { background: var(--cla-navy); border-color: var(--cla-navy); color: var(--cla-white); }
+.badge.sample { border-style: dashed; color: var(--cla-grey); border-color: var(--cla-grey); }
+.seg { border-color: var(--cla-navy); border-radius: 3px; }
+.seg button { color: var(--cla-navy); font-family: var(--cla-body); }
+.seg button + button { border-left-color: var(--cla-navy); }
+.seg button[aria-pressed="true"] { background: var(--cla-navy); color: var(--cla-white); }
+
+/* --------------------------------------------------------------------------
+   Forms
+   -------------------------------------------------------------------------- */
+label, legend { color: var(--cla-navy); }
+input[type="text"], input[type="email"], input[type="search"], input[type="tel"], input[type="date"], input[type="number"], select, textarea {
+  border: 1px solid #C5CAD3; border-radius: 3px; background: var(--cla-white); font-family: var(--cla-body); font-weight: 300; color: var(--cla-text);
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--cla-riptide); outline-offset: 0; border-color: var(--cla-navy); }
+.field.has-error input, .field.has-error select, .field.has-error textarea { border-color: var(--wf-note-query-border); background: #FFF8F7; }
+.field-error { color: var(--wf-note-query-border); }
+input[type="checkbox"], input[type="radio"], input[type="range"] { accent-color: var(--cla-navy); }
+.option-card { border: 1px solid #C5CAD3; border-radius: 3px; background: var(--cla-white); transition: border-color 0.15s, background 0.15s; }
+.option-card:hover { border-color: var(--cla-navy); }
+.option-card:has(input:checked) { border-color: var(--cla-navy); background: var(--cla-riptide-tint); box-shadow: inset 0 0 0 1px var(--cla-navy); }
+.option-card strong { font-family: var(--cla-display); font-weight: 400; font-size: 1.1875rem; color: var(--cla-navy); }
+.check { color: var(--cla-text); font-weight: 300; }
+.file-drop { border-color: var(--cla-riptide-mid); background: var(--cla-riptide-tint); }
+.context-line { background: var(--cla-riptide-tint); border-left: 5px solid var(--cla-riptide); border-radius: 0; }
+
+/* --------------------------------------------------------------------------
+   Illustrated placeholders: a riptide-and-navy city, standing in for photos
+   -------------------------------------------------------------------------- */
+.wf-placeholder {
+  position: relative; overflow: hidden; border: 0; border-radius: 0;
+  background:
+    radial-gradient(70% 60% at 78% 18%, rgba(255,255,255,0.35), transparent 60%),
+    linear-gradient(180deg, #8FB9C7 0%, #B9DADC 58%, #DCEFEF 100%);
+  color: var(--cla-white); justify-content: flex-start; align-items: flex-end;
+  font-family: var(--cla-body); font-size: 0.6875rem; font-weight: 600; letter-spacing: 1.5px; text-align: left;
+  padding: 0.75rem 0.9rem; text-shadow: 0 1px 2px rgba(30,42,57,0.6);
+}
+.wf-placeholder::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 9px, rgba(255,255,255,0.22) 9px 11px) 8% 100% / 14% 62% no-repeat,
+    linear-gradient(var(--cla-nav-blue), var(--cla-nav-blue)) 8% 100% / 14% 62% no-repeat,
+    repeating-linear-gradient(0deg, transparent 0 10px, rgba(255,255,255,0.2) 10px 12px) 26% 100% / 12% 84% no-repeat,
+    linear-gradient(var(--cla-navy), var(--cla-navy)) 26% 100% / 12% 84% no-repeat,
+    linear-gradient(var(--cla-riptide-mid), var(--cla-riptide-mid)) 41% 100% / 10% 46% no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 8px, rgba(255,255,255,0.2) 8px 10px) 58% 100% / 15% 72% no-repeat,
+    linear-gradient(var(--cla-deep), var(--cla-deep)) 58% 100% / 15% 72% no-repeat,
+    linear-gradient(var(--cla-nav-blue), var(--cla-nav-blue)) 76% 100% / 11% 54% no-repeat,
+    repeating-linear-gradient(0deg, transparent 0 12px, rgba(255,255,255,0.18) 12px 14px) 93% 100% / 13% 92% no-repeat,
+    linear-gradient(var(--cla-navy), var(--cla-navy)) 93% 100% / 13% 92% no-repeat;
+}
+.wf-placeholder.has-photo { background-size: cover; background-position: center; color: transparent; text-shadow: none; }
+.wf-placeholder.has-photo::before { display: none; }
+/* Avatars: a drawn person on riptide tint (no real staff photos) */
+.wf-placeholder.avatar { border-radius: 50%; color: transparent; text-shadow: none; padding: 0;
+  background: radial-gradient(circle at 50% 38%, var(--cla-navy) 0 17%, transparent 18%), radial-gradient(ellipse 34% 28% at 50% 92%, var(--cla-navy) 0 98%, transparent 100%), var(--cla-riptide-tint); }
+.wf-placeholder.avatar::before { display: none; }
+/* Logo placeholder: a simple drawn wordmark */
+.wf-placeholder.logo { background: none; color: var(--cla-white); font-family: var(--cla-body); font-size: 1.375rem; font-weight: 600; letter-spacing: 0; text-transform: none; text-shadow: none; padding: 0 0 0 46px; width: auto; height: 36px; align-items: center; font-size: 0; }
+.wf-placeholder.logo::before { inset: 0 auto 0 0; width: 36px; border-radius: 50%; background: var(--cla-white); }
+.wf-placeholder.logo::after { content: 'CLA Global'; font-size: 1.375rem; color: var(--cla-white); }
+.proof-strip .wf-placeholder { background: var(--cla-riptide-tint); color: var(--cla-riptide-dark); text-shadow: none; border-radius: 3px; justify-content: center; align-items: center; }
+.proof-strip .wf-placeholder::before { display: none; }
+
+/* --------------------------------------------------------------------------
+   Prototype navigator, styled like the claglobal.com header
+   -------------------------------------------------------------------------- */
+header.proto-nav { background: var(--cla-white); border-bottom: 1px solid var(--cla-rule); box-shadow: 0 1px 0 rgba(46,51,78,0.04); }
+.proto-home { font-family: var(--cla-body); font-weight: 600; color: var(--cla-navy); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+.proto-home::before { content: ''; width: 26px; height: 26px; border-radius: 50%; background: var(--cla-navy); flex: none; }
+.proto-home span { color: var(--cla-riptide-dark); font-weight: 400; font-size: 0.8125rem; letter-spacing: 2px; text-transform: uppercase; }
+.proto-links a { color: var(--cla-nav-blue); font-weight: 300; text-decoration: none; border-bottom-width: 3px; }
+.proto-links a:hover { color: var(--cla-navy); }
+.proto-links a[aria-current="page"] { border-bottom-color: var(--cla-riptide); font-weight: 400; color: var(--cla-navy); }
+.proto-links .n { border-color: var(--cla-riptide-mid); color: var(--cla-navy); font-family: var(--cla-body); }
+.proto-links a[aria-current="page"] .n { background: var(--cla-riptide); border-color: var(--cla-riptide); }
+.notes-toggle { border-color: var(--cla-rule); color: var(--cla-navy); font-family: var(--cla-body); font-weight: 400; }
+.notes-toggle[aria-checked="true"] .notes-track { background: var(--cla-riptide-dark); }
+
+/* --------------------------------------------------------------------------
+   Page heads: navy colour blocks, with photography behind where it loads
+   -------------------------------------------------------------------------- */
+.page-head, .hub-hero, .home-hero { background-color: var(--cla-navy); background-size: cover; background-position: center; border-bottom: 0; color: var(--cla-white); }
+.page-head { padding: clamp(2.5rem, 5vw, 4rem) 0; }
+.page-head h1, .hub-hero h1, .home-hero h1 { color: var(--cla-white); }
+.page-head .lead, .page-head p, .hub-hero .lead, .home-hero .lead { color: var(--cla-on-navy); }
+.page-head .eyebrow, .hub-hero .eyebrow, .home-hero .eyebrow { color: var(--cla-riptide); }
+.page-head a:not(.btn), .hub-hero a:not(.btn) { color: var(--cla-riptide); }
+.page-head label, .page-head legend { color: var(--cla-white); }
+.page-head .btn-secondary, .hub-hero .btn-secondary { background: transparent; color: var(--cla-white); border-color: var(--cla-white); }
+.page-head .btn-secondary:hover { background: var(--cla-white); color: var(--cla-navy); }
+.page-head .btn:not(.btn-secondary) { background: var(--cla-riptide); border-color: var(--cla-riptide); color: var(--cla-navy); }
+.page-head .btn:not(.btn-secondary):hover { background: var(--cla-white); border-color: var(--cla-white); }
+.page-head .tag-list li, .page-head .tag-link { border-color: rgba(255,255,255,0.5); color: var(--cla-white); }
+.page-head .tag-link:hover { border-color: var(--cla-riptide); color: var(--cla-riptide); }
+.page-head .wf-note, .home-hero .wf-note { color: var(--cla-text); }
+.page-head .wf-note a { color: var(--cla-riptide-dark); }
+.page-head .field-hint { color: var(--cla-on-navy); }
+.page-head .key-strip { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; background: rgba(30,42,57,0.55); }
+.page-head .key-strip div + div { border-left-color: rgba(255,255,255,0.2); }
+.page-head .key-strip b { font-family: var(--cla-display); font-weight: 400; font-size: 2.25rem; color: var(--cla-white); }
+.page-head .key-strip span { color: var(--cla-on-navy); }
+.page-head select { max-width: 100%; }
+.service-switch a { border-color: rgba(255,255,255,0.55); color: var(--cla-white); text-decoration: none; }
+.service-switch a[aria-current="page"] { background: var(--cla-riptide); border-color: var(--cla-riptide); color: var(--cla-navy); }
+
+/* Homepage hero */
+.home-hero { padding: clamp(3rem, 7vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem); }
+.home-hero h1 { max-width: 20ch; font-size: clamp(2.375rem, 5vw, 3.75rem); }
+.route { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; background: var(--cla-white); color: var(--cla-text); padding: 1.75rem; }
+.route h2 { font-size: 1.625rem; }
+.route + .route { background: rgba(255,255,255,0.94); }
+.route .wf-meta a { color: var(--cla-riptide-dark); }
+
+/* Landing hub */
+.hub-hero { padding: clamp(3rem, 6vw, 5rem) 0; }
+.hub-hero h1 { max-width: 16ch; }
+.hub-by { color: var(--cla-on-navy); }
+.wf-hub-meta span { border-color: rgba(255,255,255,0.4); color: var(--cla-on-navy); }
+.hub-h2 { font-size: 1.75rem; }
+.proto-card { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; background: var(--cla-off-white); }
+.proto-thumb .wf-placeholder { border: 0; }
+.proto-num { border-color: var(--cla-riptide); background: var(--cla-riptide); color: var(--cla-navy); font-family: var(--cla-body); }
+.proto-body h3 { font-size: 1.625rem; }
+.proto-body h3 a { color: var(--cla-navy); text-decoration: none; }
+.proto-body h3 a:hover { color: var(--cla-riptide-dark); }
+.hub-links li { border-bottom-color: var(--cla-rule); }
+
+/* --------------------------------------------------------------------------
+   Cards, figures and lists
+   -------------------------------------------------------------------------- */
+.card, .panel { border-radius: 0; border: 0; }
+.card { border-top: 5px solid var(--cla-riptide); background: var(--cla-white); box-shadow: 0 0 0 1px var(--cla-rule) inset; padding: 1.5rem 1.375rem; }
+.card-title { font-family: var(--cla-display); font-weight: 400; font-size: 1.5rem; color: var(--cla-navy); line-height: 1.2; }
+.card-text { color: var(--cla-text); font-size: 1rem; }
+a.card { text-decoration: none; transition: background 0.15s; }
+a.card:hover { background: var(--cla-riptide-tint); }
+a.card .card-link { color: var(--cla-riptide-dark); font-weight: 600; }
+.panel { background: var(--cla-white); box-shadow: 0 0 0 1px var(--cla-rule) inset; }
+.panel.surface { background: var(--cla-off-white); box-shadow: none; }
+.stat-item { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; background: var(--cla-white); }
+.stat-value { font-family: var(--cla-display); font-weight: 400; color: var(--cla-navy); font-size: clamp(2.25rem, 3.6vw, 3rem); }
+.stat-title { font-weight: 300; color: var(--cla-text); }
+.link-grid a { border: 0; border-bottom: 1px solid var(--cla-rule); border-radius: 0; font-family: var(--cla-display); font-weight: 400; font-size: 1.1875rem; color: var(--cla-navy); padding: 1rem 0.25rem; text-decoration: none; display: flex; justify-content: space-between; }
+.link-grid a::after { content: '→'; color: var(--cla-riptide-dark); font-family: var(--cla-body); }
+.link-grid a:hover { color: var(--cla-riptide-dark); border-bottom-color: var(--cla-riptide); }
+.tag-list li, .tag-link { border-color: var(--cla-riptide-mid); color: var(--cla-navy); background: var(--cla-white); font-weight: 400; text-decoration: none; }
+.tag-link:hover { background: var(--cla-riptide-tint); color: var(--cla-navy); border-color: var(--cla-riptide-dark); }
+.kv dt { color: var(--cla-grey); }
+.kv dd { color: var(--cla-navy); font-weight: 600; }
+.key-strip { border-radius: 0; }
+
+/* Firm cards and people */
+.firm-card { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; box-shadow: 0 0 0 1px var(--cla-rule) inset; padding: 1.375rem 1.5rem; }
+.firm-card h3 { font-size: 1.5rem; }
+.firm-card h3 a { color: var(--cla-navy); text-decoration: none; }
+.firm-card h3 a:hover { color: var(--cla-riptide-dark); }
+.firm-contact b, .person b { color: var(--cla-navy); font-weight: 600; }
+.country-head { font-size: 1.75rem; border-bottom: 0; color: var(--cla-navy); margin-top: 1.25rem; }
+.finder-filters, .ins-filters { background: var(--cla-off-white); border: 0; border-top: 5px solid var(--cla-navy); border-radius: 0; }
+.ins-filters { padding: 1.25rem; }
+.result-count { color: var(--cla-navy); }
+.empty-state { border: 0; background: var(--cla-riptide-tint); border-radius: 0; }
+.filter-toggle { background: var(--cla-white); }
+
+/* Map: a navy chart with riptide pins */
+.map-canvas .wf-placeholder { background: radial-gradient(circle, rgba(125,210,211,0.22) 1px, transparent 1.5px) 0 0 / 18px 18px, linear-gradient(180deg, var(--cla-navy), var(--cla-deep)); color: var(--cla-on-navy); text-shadow: none; }
+.map-canvas .wf-placeholder::before { display: none; }
+.map-dot { background: var(--cla-riptide); border: 2px solid var(--cla-white); color: var(--cla-navy); font-weight: 700; font-family: var(--cla-body); box-shadow: 0 0 0 4px rgba(125,210,211,0.25); }
+.map-dot[aria-pressed="true"] { background: var(--cla-white); border-color: var(--cla-riptide); }
+.map-dot .dot-label { background: var(--cla-white); color: var(--cla-navy); }
+.map-zoom { background: var(--cla-white); }
+
+/* Insight rows: riptide type labels as on the live insights band */
+.insight-row { border-bottom-color: var(--cla-rule); }
+.insight-row h3 { font-size: 1.3125rem; line-height: 1.25; }
+.insight-row h3 a { color: var(--cla-navy); text-decoration: none; }
+.insight-row h3 a:hover { color: var(--cla-riptide-dark); text-decoration: underline; }
+.insight-meta { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--cla-riptide-dark); }
+.insight-meta .badge { border: 0; padding: 0; background: none; color: var(--cla-riptide-dark); letter-spacing: 2px; }
+.insight-meta .badge.sample { border: 1px dashed var(--cla-grey); padding: 0.1rem 0.35rem; color: var(--cla-grey); }
+.insight-grid { background: var(--cla-navy); padding: 1.5rem; }
+.insight-grid .insight-row h3 a { color: var(--cla-off-white); }
+.insight-grid .insight-row h3 a:hover { color: var(--cla-riptide); }
+.insight-grid .insight-meta, .insight-grid .insight-meta .badge { color: var(--cla-riptide); }
+.insight-grid .wf-meta { color: var(--cla-on-navy); }
+.feature-band { border: 0; border-radius: 0; background: var(--cla-navy); color: var(--cla-on-navy); padding: 0; overflow: hidden; gap: 0; }
+.feature-band > div:last-child { padding: 2rem; }
+.feature-band h2 { color: var(--cla-white); font-size: 2.25rem; }
+.feature-band .eyebrow { color: var(--cla-riptide); }
+.feature-band .btn { background: var(--cla-riptide); border-color: var(--cla-riptide); color: var(--cla-navy); }
+.feature-band .wf-placeholder { height: 100%; min-height: 240px; }
+
+/* Accordions, tabs, carousels, tables */
+.accordion { border: 0; border-top: 1px solid var(--cla-rule); border-radius: 0; }
+.accordion-item + .accordion-item { border-top-color: var(--cla-rule); }
+.accordion-item { border-bottom: 1px solid var(--cla-rule); }
+.accordion-title { background: var(--cla-white); font-family: var(--cla-display); font-weight: 400; font-size: 1.25rem; color: var(--cla-navy); padding: 1.125rem 0.25rem; }
+.accordion-title:hover { color: var(--cla-riptide-dark); }
+.accordion-icon { color: var(--cla-riptide-dark); }
+.accordion-content { padding: 0 0.25rem 1.25rem; }
+.tabs { border-bottom: 1px solid var(--cla-rule); gap: 1.5rem; }
+.tab { border: 0; border-bottom: 3px solid transparent; border-radius: 0; padding: 0.75rem 0; color: var(--cla-nav-blue); font-family: var(--cla-body); font-weight: 300; font-size: 1.0625rem; }
+.tab.active { border: 0; border-bottom: 3px solid var(--cla-riptide); color: var(--cla-navy); font-weight: 600; background: none; margin-bottom: -1px; }
+.carousel { border: 0; border-radius: 0; background: var(--cla-off-white); }
+.carousel-item h3 { font-size: 1.75rem; }
+.carousel-arrow { border-color: var(--cla-navy); color: var(--cla-navy); background: var(--cla-white); }
+.carousel-arrow:hover { background: var(--cla-navy); color: var(--cla-white); }
+.carousel-dot { background: #C5CAD3; }
+.carousel-dot.active { background: var(--cla-riptide-dark); }
+.wf-quote { border-left: 5px solid var(--cla-riptide); background: none; border-radius: 0; padding: 0.25rem 0 0.25rem 1.5rem; }
+.wf-quote p { font-family: var(--cla-display); font-style: normal; font-size: 1.375rem; line-height: 1.4; color: var(--cla-navy); }
+.wf-quote cite { color: var(--cla-grey); }
+.cmp-table thead th { border-bottom: 2px solid var(--cla-navy); color: var(--cla-navy); font-family: var(--cla-display); font-weight: 400; font-size: 1.25rem; }
+.cmp-table tbody th { color: var(--cla-navy); font-weight: 600; }
+.cmp-table td, .cmp-table th { border-bottom-color: var(--cla-rule); }
+
+/* Steps, process, timeline */
+.stepper li { border-top-color: var(--cla-rule); color: var(--cla-grey); }
+.stepper li::before { color: var(--cla-riptide-dark); letter-spacing: 1.5px; }
+.stepper li.current { border-top-color: var(--cla-riptide); color: var(--cla-navy); }
+.stepper li.done { border-top-color: var(--cla-navy); color: var(--cla-navy); }
+.step-nav { border-top-color: var(--cla-rule); }
+.confirm-box { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; background: var(--cla-off-white); }
+.confirm-box .tick { border: 0; background: var(--cla-riptide); color: var(--cla-navy); }
+.next-steps li::before { border: 0; background: var(--cla-navy); color: var(--cla-white); }
+.process li { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; background: var(--cla-off-white); }
+.process li::before { border: 0; background: var(--cla-navy); color: var(--cla-white); font-family: var(--cla-body); }
+.process h3 { font-size: 1.1875rem; }
+.process .time { color: var(--cla-riptide-dark); font-weight: 600; }
+.timeline { border-left-color: var(--cla-riptide); }
+.timeline li::before { border-color: var(--cla-navy); background: var(--cla-riptide); }
+.timeline b { font-family: var(--cla-display); font-weight: 400; font-size: 1.25rem; color: var(--cla-navy); }
+.event-list li { border: 0; border-left: 5px solid var(--cla-riptide); border-radius: 0; background: var(--cla-off-white); }
+.event-date { border: 0; background: var(--cla-navy); color: var(--cla-riptide); border-radius: 3px; }
+.event-date b { color: var(--cla-white); font-family: var(--cla-display); font-weight: 400; }
+.split-total { border-color: var(--cla-riptide-mid); background: var(--cla-riptide-tint); color: var(--cla-navy); }
+.split-total.bad { background: #FFF8F7; }
+.benefit-grid .card { box-shadow: none; background: rgba(171,174,171,0.1); }
+
+/* Service and article layouts */
+.service-nav ul { border-left-color: var(--cla-riptide); }
+.service-nav a { color: var(--cla-nav-blue); text-decoration: none; }
+.service-nav a:hover { color: var(--cla-riptide-dark); }
+.sub-service { border-bottom-color: var(--cla-rule); }
+.sub-service h2 { font-size: 1.75rem; }
+.article-body h2 { font-size: 1.75rem; }
+.author-card { border-top: 5px solid var(--cla-riptide); }
+
+/* Report chart: navy bars on a riptide track */
+.rbar-track { background: var(--cla-riptide-tint); border-radius: 0; height: 16px; }
+.rbar-fill { background: var(--cla-navy); }
+.rbar b { font-family: var(--cla-display); font-weight: 400; font-size: 1.25rem; color: var(--cla-navy); }
+
+/* Notes and proposal panel (ClerksWell layer, kept distinct from the brand) */
+.proposal { background: var(--wf-note-bg); border-bottom-color: var(--wf-note-border); }
+.proposal h2 { font-family: var(--cla-body); font-weight: 700; font-size: 1.0625rem; color: var(--cla-text); }
+.wf-note { color: var(--cla-text); font-weight: 400; }
+
+/* Toast and modal */
+.toast { background: var(--cla-navy); border-left: 5px solid var(--cla-riptide); border-radius: 0; }
+.wf-modal { background: rgba(30,42,57,0.55); }
+.wf-modal-panel { border-radius: 0; border-top: 5px solid var(--cla-riptide); }
+
+/* --------------------------------------------------------------------------
+   Footer pager: navy, as the live footer
+   -------------------------------------------------------------------------- */
+.proto-footer { background: var(--cla-navy); border-top: 0; padding: 2.5rem 0; color: var(--cla-on-navy); }
+.proto-pager a { background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 3px; color: var(--cla-white); font-family: var(--cla-display); font-weight: 400; font-size: 1.1875rem; text-decoration: none; }
+.proto-pager a .wf-meta { font-family: var(--cla-body); color: var(--cla-riptide); letter-spacing: 2px; text-transform: uppercase; font-size: 0.6875rem; }
+.proto-pager a:hover { border-color: var(--cla-riptide); background: rgba(125,210,211,0.08); }
+.proto-footer .wf-meta { color: var(--cla-on-navy); }
+.proto-footer > .container > .wf-meta::after { content: ' · Photography © CLA Global'; }
+
+@media (max-width: 768px) {
+  .page-head .key-strip b { font-size: 1.75rem; }
+  .insight-grid { padding: 1rem; }
+  .feature-band > div:last-child { padding: 1.5rem; }
+  .route { padding: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) { .btn, a.card, .option-card { transition: none; } }
+.feature-band .wf-placeholder { aspect-ratio: auto; width: 100%; }
+.feature-band p { color: var(--cla-on-navy); }
+.wf-placeholder { isolation: isolate; }
+.wf-placeholder::before { z-index: -1; }
+.proto-nav-row { gap: 1rem; }
+.proto-links { gap: 0; }
+.proto-links a { font-size: 0.9063rem; padding-left: 0.45rem; padding-right: 0.45rem; }
+@media (max-width: 1500px) { .proto-home span { display: none; } }
+.home-hero h1 { max-width: 24ch; }

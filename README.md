@@ -1,8 +1,14 @@
-# CLA Global — website improvement prototypes (V1)
+# CLA Global — website improvement prototypes (V2)
 
 Five clickable prototypes for improvements to claglobal.com, prepared by ClerksWell following the
-phase 1 review (30 September 2026). This version is greyscale on purpose, so feedback stays on
-structure and behaviour. The CLA Global design layer will be added in `src/css/theme.css` alone.
+phase 1 review (30 September 2026). The CLA Global design layer (colours, type, buttons, imagery
+treatment) lives entirely in `src/css/theme.css`; remove that file to get the greyscale prototypes back.
+
+Photography is CLA Global's own, loaded directly from claglobal.com by `src/js/photos.js` (the
+mapping of images to pages, insights and countries lives there). Where the images can't load,
+illustrated placeholders in the brand palette show instead. Photography © CLA Global; the
+repository and site are public, so treat them accordingly. Museo Sans is licensed, so Nunito Sans
+stands in for it until we have CLA Global's font files.
 
 ## View
 Live: https://hrhlescargotleo.github.io/CLA-Global-Roadmap/
@@ -34,6 +40,6 @@ People, emails (all @example.com), services, industries, figures, case studies a
 report are sample data in `src/js/data.js`. The repository and Pages site are public.
 
 ## Status
-V1, greyscale prototypes for internal review. CLA Global's own header and footer are replaced by a
+V2, designed prototypes for internal review (V1 was the greyscale round). CLA Global's own header and footer are replaced by a
 prototype navigator. Notes are off by default; switch "Notes on" in the top bar to show what each
 prototype proposes and why, plus in-page annotations.

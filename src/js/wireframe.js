@@ -608,7 +608,7 @@
   function insightRow(i) {
     var f = firmById(i.firm);
     var href = i.href || ('article.html?id=' + i.id);
-    return '<article class="insight-row">' +
+    return '<article class="insight-row" data-insight="' + i.id + '" data-service="' + esc(i.service) + '">' +
       '<div class="wf-placeholder ratio-16-9" aria-hidden="true">Image</div>' +
       '<div class="insight-body"><div class="insight-meta"><span class="badge">' + esc(i.type) + '</span><span>' + fmtDate(i.date) + '</span>' + (i.sample ? '<span class="badge sample">Sample</span>' : '') + '</div>' +
       '<h3><a href="' + href + '">' + esc(i.title) + '</a></h3>' +
