@@ -10,11 +10,19 @@
 </head>
 <body class="hub">
   <a class="skip-link" href="#main">Skip to content</a>
-  <!-- Prototype navigator (replaces CLA Global's own header, R01) -->
+  <!-- Prototype navigator (replaces CLA Global's own header, R01). Two tabs: big improvements and quick wins (R05). -->
   <header class="sticky site-header proto-nav">
     <div class="container proto-nav-row">
       <a class="proto-home" href="./index.html" aria-label="CLA Global prototypes, overview">CLA Global <span>prototypes</span></a>
-      <nav aria-label="Prototypes">
+      <nav class="proto-tabs" aria-label="Prototype sets">
+        <a href="./index.html" data-set-link="concepts">Big improvements</a>
+        <a href="./quick-wins/index.html" data-set-link="qw">Quick wins</a>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+      <nav class="proto-set" data-set="concepts" aria-label="Big improvements">
         <ul class="proto-links">
           <li><a href="./index.html" data-proto="index">Overview</a></li>
           <li><a href="./pages/find-a-firm.html" data-proto="find-a-firm firm"><span class="n">1</span> Find a firm</a></li>
@@ -24,10 +32,35 @@
           <li><a href="./pages/insights.html" data-proto="insights article report"><span class="n">5</span> Insights</a></li>
         </ul>
       </nav>
-      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
-        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
-        <span class="notes-label">Notes off</span>
-      </button>
+      <nav class="proto-set" data-set="qw" aria-label="Quick wins" hidden>
+        <ul class="proto-links">
+          <li><a href="./quick-wins/index.html" data-proto="index">Overview</a></li>
+          <li><a href="./quick-wins/firm-contacts.html" data-proto="firm-contacts" title="QW1 Contacts on the firm list" aria-label="Quick win 1: Contacts on the firm list" data-label="QW1 Contacts on the firm list"><span class="n">1</span></a></li>
+          <li><a href="./quick-wins/link-labels.html" data-proto="link-labels" title="QW2 Clear &quot;View details&quot; links" aria-label="Quick win 2: Clear &quot;View details&quot; links" data-label="QW2 Clear &quot;View details&quot; links"><span class="n">2</span></a></li>
+          <li><a href="./quick-wins/profile-check.html" data-proto="profile-check" title="QW3 Firm contacts kept current" aria-label="Quick win 3: Firm contacts kept current" data-label="QW3 Firm contacts kept current"><span class="n">3</span></a></li>
+          <li><a href="./quick-wins/service-experts.html" data-proto="service-experts" title="QW4 Named specialists on service pages" aria-label="Quick win 4: Named specialists on service pages" data-label="QW4 Named specialists on service pages"><span class="n">4</span></a></li>
+          <li><a href="./quick-wins/cross-border.html" data-proto="cross-border" title="QW5 How we work across borders" aria-label="Quick win 5: How we work across borders" data-label="QW5 How we work across borders"><span class="n">5</span></a></li>
+          <li><a href="./quick-wins/network-alliance.html" data-proto="network-alliance" title="QW6 Network or alliance, side by side" aria-label="Quick win 6: Network or alliance, side by side" data-label="QW6 Network or alliance, side by side"><span class="n">6</span></a></li>
+          <li><a href="./quick-wins/member-stories.html" data-proto="member-stories" title="QW7 Member stories" aria-label="Quick win 7: Member stories" data-label="QW7 Member stories"><span class="n">7</span></a></li>
+          <li><a href="./quick-wins/growth-timeline.html" data-proto="growth-timeline" title="QW8 The network&#x27;s growth at a glance" aria-label="Quick win 8: The network&#x27;s growth at a glance" data-label="QW8 The network&#x27;s growth at a glance"><span class="n">8</span></a></li>
+          <li><a href="./quick-wins/latest-insights.html" data-proto="latest-insights" title="QW9 Latest insights on the homepage" aria-label="Quick win 9: Latest insights on the homepage" data-label="QW9 Latest insights on the homepage"><span class="n">9</span></a></li>
+          <li><a href="./quick-wins/featured-once.html" data-proto="featured-once" title="QW10 Featured insights shown once" aria-label="Quick win 10: Featured insights shown once" data-label="QW10 Featured insights shown once"><span class="n">10</span></a></li>
+          <li><a href="./quick-wins/email-signup.html" data-proto="email-signup" title="QW11 Email sign-up" aria-label="Quick win 11: Email sign-up" data-label="QW11 Email sign-up"><span class="n">11</span></a></li>
+          <li><a href="./quick-wins/press-room.html" data-proto="press-room" title="QW12 A press room" aria-label="Quick win 12: A press room" data-label="QW12 A press room"><span class="n">12</span></a></li>
+          <li><a href="./quick-wins/short-form.html" data-proto="short-form" title="QW13 A shorter client form" aria-label="Quick win 13: A shorter client form" data-label="QW13 A shorter client form"><span class="n">13</span></a></li>
+          <li><a href="./quick-wins/what-next.html" data-proto="what-next" title="QW14 Say what happens next" aria-label="Quick win 14: Say what happens next" data-label="QW14 Say what happens next"><span class="n">14</span></a></li>
+          <li><a href="./quick-wins/separate-forms.html" data-proto="separate-forms" title="QW15 Separate forms for each audience" aria-label="Quick win 15: Separate forms for each audience" data-label="QW15 Separate forms for each audience"><span class="n">15</span></a></li>
+          <li><a href="./quick-wins/headline-numbers.html" data-proto="headline-numbers" title="QW16 Headline numbers in the page" aria-label="Quick win 16: Headline numbers in the page" data-label="QW16 Headline numbers in the page"><span class="n">16</span></a></li>
+          <li><a href="./quick-wins/recognition.html" data-proto="recognition" title="QW17 Rankings and recognition" aria-label="Quick win 17: Rankings and recognition" data-label="QW17 Rankings and recognition"><span class="n">17</span></a></li>
+          <li><a href="./quick-wins/leadership-bios.html" data-proto="leadership-bios" title="QW18 Leadership with biographies" aria-label="Quick win 18: Leadership with biographies" data-label="QW18 Leadership with biographies"><span class="n">18</span></a></li>
+          <li><a href="./quick-wins/member-lists.html" data-proto="member-lists" title="QW19 Member lists kept current" aria-label="Quick win 19: Member lists kept current" data-label="QW19 Member lists kept current"><span class="n">19</span></a></li>
+          <li><a href="./quick-wins/spelling.html" data-proto="spelling" title="QW20 One spelling standard" aria-label="Quick win 20: One spelling standard" data-label="QW20 One spelling standard"><span class="n">20</span></a></li>
+          <li><a href="./quick-wins/titles-descriptions.html" data-proto="titles-descriptions" title="QW21 Page titles and descriptions" aria-label="Quick win 21: Page titles and descriptions" data-label="QW21 Page titles and descriptions"><span class="n">21</span></a></li>
+          <li><a href="./quick-wins/accessibility.html" data-proto="accessibility" title="QW22 Accessibility fixes" aria-label="Quick win 22: Accessibility fixes" data-label="QW22 Accessibility fixes"><span class="n">22</span></a></li>
+          <li><a href="./quick-wins/form-styling.html" data-proto="form-styling" title="QW23 HubSpot forms in the site&#x27;s style" aria-label="Quick win 23: HubSpot forms in the site&#x27;s style" data-label="QW23 HubSpot forms in the site&#x27;s style"><span class="n">23</span></a></li>
+          <li><a href="./quick-wins/repeated-heading.html" data-proto="repeated-heading" title="QW24 One heading, said once" aria-label="Quick win 24: One heading, said once" data-label="QW24 One heading, said once"><span class="n">24</span></a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -39,13 +72,8 @@
         <span class="hub-by">Prepared by ClerksWell</span>
       </div>
       <h1>Five ideas for claglobal.com</h1>
-      <p class="lead">Clickable prototypes of five improvements to the CLA Global website. Each one works as it would on the live site, designed to sit with the current CLA Global brand.</p>
-      <div class="wf-hub-meta">
-        <span>Version 2</span>
-        <span>1 October 2026</span>
-        <span>Designed prototypes</span>
-        <span>Sample data</span>
-      </div>
+      <p class="lead">Clickable prototypes of improvements to the CLA Global website, designed to sit with the current CLA Global brand. Five big improvements, and 24 quick wins that can each be done on their own.</p>
+      <div class="hub-sets" role="group" aria-label="Prototype sets"><a class="btn" href="#protos-title">Big improvements</a><a class="btn btn-secondary" href="./quick-wins/index.html">Quick wins</a></div>
     </div>
   </div>
 
@@ -107,12 +135,21 @@
         </ol>
       </section>
 
+      <!-- Pointer to the second tab (R05) -->
+      <section class="hub-band" aria-labelledby="qw-teaser">
+        <div>
+          <h2 class="hub-h2" id="qw-teaser">Quick wins</h2>
+          <p>Smaller changes that can each be made on their own, from contacts on the firm list to page titles that read properly in search results. Most show today's version beside the proposed one.</p>
+        </div>
+        <a class="btn" href="./quick-wins/index.html">See the 24 quick wins</a>
+      </section>
+
       <section class="hub-notes" aria-labelledby="review-title">
         <div>
           <h2 class="hub-h2" id="review-title">How to review</h2>
           <ul>
             <li>Everything interactive works: search, filters, the map, tabs, the enquiry steps, forms and their validation. Links to pages outside these five go nowhere by design.</li>
-            <li>Use the bar at the top to move between prototypes. Switch <strong>Notes on</strong> (top right) to see what each prototype proposes and why, plus notes on behaviour (yellow) and open questions for CLA Global (red). Notes start switched off.</li>
+            <li>The bar at the top has two tabs: <strong>Big improvements</strong> (these five) and <strong>Quick wins</strong>. Use it to move between prototypes. Switch <strong>Notes on</strong> (top right) to see what each prototype proposes and why, plus notes on behaviour (yellow) and open questions for CLA Global (red). Notes start switched off.</li>
             <li>Firm names, countries and cities come from claglobal.com. People, emails, figures, services, industries and case studies are sample data. Emails all end @example.com.</li>
             <li>The look follows CLA Global's current site: navy, riptide, Georgia headings. Photography is CLA Global's own, loaded from claglobal.com; where it can't load, drawn city scenes stand in. Nunito Sans stands in for Museo Sans, which is licensed.</li>
             <li>Works on a phone: open this page on your mobile to check the layouts.</li>

@@ -386,3 +386,50 @@ a.card .card-link { color: var(--cla-riptide-dark); font-weight: 600; }
 .proto-links a { font-size: 0.9063rem; padding-left: 0.45rem; padding-right: 0.45rem; }
 @media (max-width: 1500px) { .proto-home span { display: none; } }
 .home-hero h1 { max-width: 24ch; }
+
+/* --------------------------------------------------------------------------
+   Two-set navigator and quick wins (V3)
+   -------------------------------------------------------------------------- */
+.proto-tabs a { border-color: var(--cla-rule); color: var(--cla-nav-blue); font-family: var(--cla-body); font-weight: 400; text-decoration: none; }
+.proto-tabs a:hover { border-color: var(--cla-navy); color: var(--cla-navy); }
+.proto-tabs a[aria-current="true"] { background: var(--cla-navy); border-color: var(--cla-navy); color: var(--cla-white); }
+.proto-nav .proto-set { border-top: 1px solid var(--cla-rule); }
+.hub-sets .btn-secondary { background: transparent; color: var(--cla-white); border-color: var(--cla-white); }
+.hub-sets .btn-secondary:hover { background: var(--cla-white); color: var(--cla-navy); }
+.hub-sets .btn:not(.btn-secondary) { background: var(--cla-riptide); border-color: var(--cla-riptide); color: var(--cla-navy); }
+.hub-band { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; background: var(--cla-navy); color: var(--cla-on-navy); padding: 2rem; }
+.hub-band .hub-h2 { color: var(--cla-white); }
+.hub-band .btn { background: var(--cla-riptide); border-color: var(--cla-riptide); color: var(--cla-navy); }
+.qw-card { border: 0; border-top: 5px solid var(--cla-riptide); border-radius: 0; background: var(--cla-off-white); padding: 1.5rem; }
+.qw-card h3 { font-size: 1.375rem; }
+.qw-card h3 a { color: var(--cla-navy); text-decoration: none; }
+.qw-card h3 a:hover { color: var(--cla-riptide-dark); }
+.qw-num { color: var(--cla-riptide-dark); letter-spacing: 2px; font-weight: 600; }
+.proto-try { color: var(--cla-grey); }
+.compare-panel { border: 0; border-radius: 0; box-shadow: 0 0 0 1px var(--cla-rule) inset; }
+.compare-label { border-bottom: 0; font-family: var(--cla-body); letter-spacing: 2px; font-weight: 600; font-size: 0.75rem; }
+.compare-today .compare-label { background: var(--cla-off-white); color: var(--cla-grey); border-top: 5px solid #C5CAD3; }
+.compare-proposed .compare-label { background: var(--cla-riptide-tint); color: var(--cla-riptide-dark); border-top: 5px solid var(--cla-riptide); }
+.compare-label span:last-child { color: var(--cla-grey); }
+.compare-body h3 { font-size: 1.5rem; }
+.hear-list { background: var(--cla-navy); color: var(--cla-on-navy); border-radius: 0; }
+.hear-list li::before { color: var(--cla-riptide); }
+.serp { border: 0; box-shadow: 0 0 0 1px var(--cla-rule) inset; border-radius: 3px; font-family: Arial, sans-serif; }
+.serp .title { color: #1a0dab; font-size: 1.25rem; }
+.serp .url { color: #4d5156; }
+.serp .desc { color: #4d5156; }
+.share-card { border-color: var(--cla-rule); border-radius: 3px; }
+.outline-list li { border-left-color: var(--cla-riptide); font-family: var(--cla-body); }
+.outline-list li.dup { border-left-color: var(--wf-note-query-border); }
+.boiler { background: var(--cla-off-white); border-left: 5px solid var(--cla-riptide); border-radius: 0; }
+.status-pill { border-color: var(--cla-riptide-mid); color: var(--cla-navy); }
+.status-pill.ok { background: var(--cla-riptide-tint); border-color: var(--cla-riptide-dark); }
+.check-row { border-bottom-color: var(--cla-rule); }
+.media-list li { border-bottom-color: var(--cla-rule); color: var(--cla-navy); }
+.media-list li span { color: var(--cla-riptide-dark); text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.75rem; }
+.qw-result { border: 0; border-left: 5px solid var(--cla-riptide); background: var(--cla-riptide-tint); border-radius: 0; color: var(--cla-navy); }
+.field-count { color: var(--cla-riptide-dark); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.75rem; }
+/* HubSpot's default form look, kept on purpose in "Today" panels */
+.old-form { font-family: Arial, Helvetica, sans-serif; }
+.old-form label { color: #33475b; font-family: Arial, Helvetica, sans-serif; font-weight: 400; }
+.old-form input, .old-form select { background: #f5f8fa; border: 1px solid #cbd6e2; border-radius: 3px; font-family: Arial, Helvetica, sans-serif; }
