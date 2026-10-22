@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW15 Separate forms for each audience — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 15 of 24 · Separate forms for each audience</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Give clients, firms that want to join and the press their own short forms on the pages they belong to, instead of one form that changes shape.</p></div>
+          <div><h2>Why</h2><p>One HubSpot form serves everyone. Choosing "I want to join" from "How can we help?" expands it from ten fields to 21, adding turnover, currency, public interest entity clients and three revenue percentages, all required. Separate forms would be shorter for everyone, and each one can be tracked as its own conversion in HubSpot and GA4.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW15 (R84, idea #34) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW15</p>
+        <h1>Separate forms for each audience</h1>
+        <p class="lead">Separate forms for clients, firms that want to join and the press, instead of one form for everyone.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Choose &quot;I want to join&quot; on today&#x27;s form.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Contact Us</span></div><div class="compare-body"><p class="field-count" id="old-count">10 fields</p><div class="old-form"><label>First name*<input type="text" disabled></label><label>Email*<input type="text" disabled></label><label for="old-help">How can we help? *</label><select id="old-help"><option value="">Please Select</option><option value="join">I want to join CLA Global</option><option value="firm">I need support from a member firm</option><option value="media">I have a media enquiry</option><option value="general">I have a general enquiry</option></select><label class="join-extra" hidden>Website URL*<input type="text" disabled></label><label class="join-extra" hidden>What is your firm ranking within your country*<input type="text" disabled></label><label class="join-extra" hidden>Number of partners or individuals with equivalent positions*<input type="text" disabled></label><label class="join-extra" hidden>Total number of personnel*<input type="text" disabled></label><label class="join-extra" hidden>Annual turnover (revenue)*<input type="text" disabled></label><label class="join-extra" hidden>Currency*<input type="text" disabled></label><label class="join-extra" hidden>Total number of clients*<input type="text" disabled></label><label class="join-extra" hidden>Total number of Public Interest Entities (PIEs) and listed clients*<input type="text" disabled></label><label class="join-extra" hidden>Percent of revenue from audit*<input type="text" disabled></label><label class="join-extra" hidden>Percent of revenue from tax*<input type="text" disabled></label><label class="join-extra" hidden>Percent of revenue from advisory and outsourcing*<input type="text" disabled></label><label>Comments<input type="text" disabled></label></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Three short forms</span></div><div class="compare-body"><div class="tabs" role="tablist" aria-label="Forms"><button class="tab active" data-tab="f-client" aria-selected="true">Clients</button><button class="tab" data-tab="f-join" aria-selected="false">Join</button><button class="tab" data-tab="f-press" aria-selected="false">Press</button></div><div><div class="tab-panel active" id="f-client"><p class="field-count">6 fields, on Contact us</p><p>Name · Work email · Company · Country needed · Phone (optional) · How can we help?</p></div><div class="tab-panel" id="f-join"><p class="field-count">7 fields, on Join CLA Global</p><p>Firm · Country · Website · Partners (band) · Name and role · Email · Network or alliance</p><p><a href="../pages/join.html#eoi">See it in big improvement 4</a></p></div><div class="tab-panel" id="f-press"><p class="field-count">4 fields, in the press room</p><p>Name · Publication · Email · Your question and deadline</p></div></div></div></section>
+      </div><p class="wf-note query" data-note="1"><span class="wf-note-label">Technical</span>Three forms means three HubSpot conversions. This needs coordinating with the GA4 event tagging already in progress.</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

@@ -263,21 +263,31 @@
 
   /* --- Prototype navigator: current page and previous / next ------------- */
   function initProtoNav() {
-    var file = (window.location.pathname.split('/').pop() || 'index.html').replace('.html', '') || 'index';
-    var links = Array.prototype.slice.call(document.querySelectorAll('.proto-links a[data-proto]'));
+    /* Two sets of prototypes share the navigator: the big improvements and
+       the quick wins (pages under /quick-wins/). Only the current set's
+       links show, and the pager stays within that set. */
+    var path = window.location.pathname;
+    var set = path.indexOf('/quick-wins/') !== -1 ? 'qw' : 'concepts';
+    document.body.setAttribute('data-proto-set', set);
+    Array.prototype.forEach.call(document.querySelectorAll('.proto-set'), function (n) { n.hidden = n.getAttribute('data-set') !== set; });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-set-link]'), function (a) {
+      if (a.getAttribute('data-set-link') === set) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    });
+    var file = (path.split('/').pop() || 'index.html').replace('.html', '') || 'index';
+    var links = Array.prototype.slice.call(document.querySelectorAll('.proto-set[data-set="' + set + '"] .proto-links a[data-proto]'));
     var index = -1;
     links.forEach(function (a, i) {
       var match = a.getAttribute('data-proto').split(' ').indexOf(file) !== -1;
       if (match) { a.setAttribute('aria-current', 'page'); index = i; }
     });
-    var current = document.querySelector('.proto-links a[aria-current]');
-    if (current && current.scrollIntoView && window.innerWidth < 1024) {
+    var current = document.querySelector('.proto-set:not([hidden]) .proto-links a[aria-current]');
+    if (current) {
       var list = current.closest('.proto-links');
-      if (list) list.scrollLeft = current.offsetLeft - 16;
+      if (list && list.scrollWidth > list.clientWidth) list.scrollLeft = current.offsetLeft - list.clientWidth / 2 + current.offsetWidth / 2;
     }
     var pager = document.querySelector('[data-proto-pager]');
     if (!pager || index < 0) return;
-    function label(a) { return a.textContent.replace(/\s+/g, ' ').trim(); }
+    function label(a) { return (a.getAttribute('data-label') || a.textContent).replace(/\s+/g, ' ').trim(); }
     var html = '';
     if (index > 0) html += '<a class="prev" href="' + links[index - 1].getAttribute('href') + '"><span class="wf-meta">Previous</span>' + label(links[index - 1]) + '</a>';
     else html += '<span></span>';
@@ -990,6 +1000,165 @@
     render();
   }
 
+
+  /* --- Quick wins (R70–R94) ---------------------------------------------
+     Small, generic behaviours driven by data attributes, shared by the
+     quick-win demos so none of them needs its own script. */
+  function initQuickWins() {
+    /* Today / Proposed / Both view switch */
+    $all('[data-show-target]').forEach(function (group) {
+      var target = document.getElementById(group.getAttribute('data-show-target'));
+      $all('[data-show]', group).forEach(function (b) {
+        b.addEventListener('click', function () {
+          target.setAttribute('data-show', b.getAttribute('data-show'));
+          $all('[data-show]', group).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        });
+      });
+    });
+    /* Copy a block of text */
+    $all('[data-copy]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var el = document.getElementById(b.getAttribute('data-copy'));
+        var text = el ? el.textContent.trim() : '';
+        var done = function () { toast(b.getAttribute('data-copy-msg') || 'Copied'); };
+        try { navigator.clipboard.writeText(text).then(done, done); } catch (e) { done(); }
+      });
+    });
+    /* Show / hide a panel (screen reader lists, old news notes, worked examples) */
+    $all('[data-reveal]').forEach(function (b) {
+      var el = document.getElementById(b.getAttribute('data-reveal'));
+      if (!el) return;
+      b.setAttribute('aria-expanded', el.hidden ? 'false' : 'true');
+      b.setAttribute('aria-controls', el.id);
+      b.addEventListener('click', function () {
+        el.hidden = !el.hidden;
+        b.setAttribute('aria-expanded', el.hidden ? 'false' : 'true');
+        var alt = b.getAttribute('data-alt-label');
+        if (alt) { b.setAttribute('data-alt-label', b.textContent); b.textContent = alt; }
+      });
+    });
+    /* Highlight what changed */
+    $all('[data-changes]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var on = document.body.classList.toggle('show-changes');
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        b.textContent = on ? 'Hide changes' : 'Show changes';
+      });
+    });
+    /* Small forms that validate, then show their confirmation */
+    $all('form.qw-form').forEach(function (f) {
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (f.hasAttribute('data-novalidate-demo') ? false : !validateForm(f)) return;
+        var done = document.getElementById(f.getAttribute('data-done'));
+        f.hidden = true;
+        if (done) {
+          done.hidden = false;
+          $all('[data-echo]', done).forEach(function (el) { var src = document.getElementById(el.getAttribute('data-echo')); if (src) el.textContent = src.value || el.textContent; });
+          var h = $('h3, h4, p', done); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); }
+        }
+      });
+    });
+    $all('[data-reset-form]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = document.getElementById(b.getAttribute('data-reset-form'));
+        if (!f) return;
+        f.reset(); f.hidden = false;
+        $all('.has-error', f).forEach(function (x) { x.classList.remove('has-error'); });
+        $all('.field-error', f).forEach(function (x) { x.hidden = true; });
+        var done = document.getElementById(f.getAttribute('data-done')); if (done) done.hidden = true;
+      });
+    });
+    /* QW3: firm confirms or updates each contact */
+    $all('[data-confirm]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var row = b.closest('.check-row');
+        var pill = $('.status-pill', row);
+        pill.textContent = 'Confirmed ' + fmtDate(new Date().toISOString().slice(0, 10));
+        pill.className = 'status-pill ok';
+        var ed = $('.check-edit', row); if (ed) ed.hidden = true;
+        updateCheckCount();
+      });
+    });
+    $all('[data-edit]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var row = b.closest('.check-row');
+        var ed = $('.check-edit', row); ed.hidden = false; $('input', ed).focus();
+      });
+    });
+    $all('[data-save-edit]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var row = b.closest('.check-row');
+        var input = $('.check-edit input', row);
+        if (input.value.trim()) $('.check-email', row).textContent = input.value.trim();
+        var pill = $('.status-pill', row);
+        pill.textContent = 'Updated ' + fmtDate(new Date().toISOString().slice(0, 10));
+        pill.className = 'status-pill ok';
+        $('.check-edit', row).hidden = true;
+        updateCheckCount();
+      });
+    });
+    function updateCheckCount() {
+      var c = $('#check-count'); if (!c) return;
+      var all = $all('.check-row .status-pill'), ok = all.filter(function (p) { return p.classList.contains('ok'); }).length;
+      c.textContent = ok + ' of ' + all.length + ' contacts confirmed';
+      if (ok === all.length) toast('Thank you. Your entry is confirmed for the next six months.');
+    }
+    /* QW6: which route suits us? */
+    var checker = $('#route-checker');
+    if (checker) {
+      checker.addEventListener('change', function () {
+        var a = $('input[name="rc-brand"]:checked', checker), b = $('input[name="rc-gov"]:checked', checker);
+        var out = $('#route-result');
+        if (!a || !b) return;
+        var network = a.value === 'yes' && b.value === 'yes';
+        var alliance = a.value === 'no';
+        out.hidden = false;
+        out.innerHTML = network ? '<b>Network membership</b> looks the closer fit: you would take the CLA Global name and help shape the network.' : alliance ? '<b>Alliance membership</b> looks the closer fit: the network\'s reach, under your own name.' : '<b>Either could suit.</b> A first call with the membership team is the best way to decide.';
+      });
+    }
+    /* QW9: a newly published insight appears automatically on the proposed row */
+    var qrow = $('#qw-proposed-row');
+    if (qrow) qrow.innerHTML = INSIGHTS.filter(function (i) { return i.type !== 'Report'; }).sort(function (a, b) { return b.date.localeCompare(a.date); }).slice(0, 3).map(insightRow).join('');
+    var pub = $('[data-publish]');
+    if (pub) pub.addEventListener('click', function () {
+      var row = $('#qw-proposed-row');
+      var item = document.createElement('div');
+      item.innerHTML = insightRow({ id: 'new-' + Date.now(), type: 'Article', date: new Date().toISOString().slice(0, 10), title: '[New insight published today]', service: 'Tax', country: 'Spain', firm: 'cla-spain', author: '' });
+      row.insertBefore(item.firstChild, row.firstChild);
+      while (row.children.length > 3) row.removeChild(row.lastChild);
+      pub.disabled = true;
+      toast('Published. The proposed row updated itself; today\'s row needs editing by hand.');
+    });
+    /* QW10: featured items on every page (today) or page one only (proposed) */
+    $all('[data-pager-mode]').forEach(function (panel) {
+      var mode = panel.getAttribute('data-pager-mode');
+      function show(n) {
+        $all('[data-pg]', panel).forEach(function (li) { li.hidden = li.getAttribute('data-pg') !== String(n); });
+        $all('[data-feat]', panel).forEach(function (li) { li.hidden = mode === 'proposed' && n !== 1; });
+        $all('[data-page]', panel).forEach(function (b) { b.setAttribute('aria-current', b.getAttribute('data-page') === String(n) ? 'page' : 'false'); });
+      }
+      $all('[data-page]', panel).forEach(function (b) { b.addEventListener('click', function () { show(parseInt(b.getAttribute('data-page'), 10)); }); });
+      show(1);
+    });
+    /* QW15: today's single form grows when "I want to join" is chosen */
+    var help = $('#old-help');
+    if (help) help.addEventListener('change', function () {
+      var join = help.value === 'join';
+      $all('.join-extra').forEach(function (el) { el.hidden = !join; });
+      var c = $('#old-count'); if (c) c.textContent = (join ? 21 : 10) + ' fields';
+    });
+    /* QW16: replay the count-up that today's page relies on */
+    var replay = $('[data-replay]');
+    if (replay) replay.addEventListener('click', function () {
+      $all('.count-up').forEach(function (el) {
+        var to = parseInt(el.getAttribute('data-to'), 10), t0 = null;
+        function step(ts) { if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / 1200); el.textContent = Math.round(to * p).toLocaleString('en-GB'); if (p < 1) window.requestAnimationFrame(step); }
+        el.textContent = '0'; window.requestAnimationFrame(step);
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initNav();
     initAccordions();
@@ -1012,5 +1181,6 @@
     initSignup();
     initArticle();
     initReport();
+    initQuickWins();
   });
 })();

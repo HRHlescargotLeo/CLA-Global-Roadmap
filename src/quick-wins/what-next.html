@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW14 Say what happens next — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 14 of 24 · Say what happens next</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>After someone sends an enquiry, tell them who will reply, by when, and that a copy is on its way to their inbox.</p></div>
+          <div><h2>Why</h2><p>Nothing on the contact page says who reads an enquiry or how long a reply takes. A prospective client sending their first message to an international network is taking a small leap, and "we'll reply within two working days" costs nothing to say, provided the network can keep to it.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW14 (R83, idea #33) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW14</p>
+        <h1>Say what happens next</h1>
+        <p class="lead">After an enquiry, say who will reply and when, and send a copy by email.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Send both versions and compare the confirmations.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>After submitting</span></div><div class="compare-body"><form class="qw-form" id="qw14a" data-done="qw14a-done" data-novalidate-demo novalidate><p class="wf-meta">Form fields as today (shortened)</p><button class="btn" type="submit">Submit</button></form><div id="qw14a-done" hidden><p>[HubSpot's default thank-you message]</p><button type="button" class="btn-link" data-reset-form="qw14a">Start again</button></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Says who replies and when</span></div><div class="compare-body"><form class="qw-form" id="qw14b" data-done="qw14b-done" data-novalidate-demo novalidate><p class="wf-meta">Form fields as today (shortened)</p><button class="btn" type="submit">Send</button></form><div id="qw14b-done" class="confirm-box" hidden><h4>Thank you. Your enquiry has been sent.</h4><ol class="next-steps"><li><span>A member of the CLA Global team will reply by email within two working days.</span></li><li><span>If your enquiry is for a member firm, we'll introduce you to the right partner.</span></li><li><span>We've emailed you a copy of your message.</span></li></ol><button type="button" class="btn-link" data-reset-form="qw14b">Start again</button></div></div></section>
+      </div><p class="wf-note query" data-note="1"><span class="wf-note-label">Open question</span>Is two working days a promise the global office and member firms can keep?</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

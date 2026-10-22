@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW11 Email sign-up — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 11 of 24 · Email sign-up</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>An email sign-up in the site footer and on the Insights page, with a choice of topics and regions, feeding a HubSpot list.</p></div>
+          <div><h2>Why</h2><p>We couldn't find a way to sign up for updates anywhere on the site: not on the homepage, the insights pages or in the footer. Member firms publish useful, timely pieces, such as Malta's move to digital VAT, but the only way to hear about them is to come back and look. HubSpot is already in place for the forms, so the list has somewhere to live.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW11 (R80, idea #27) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW11</p>
+        <h1>Email sign-up</h1>
+        <p class="lead">A sign-up in the footer and on insights, with topic choices, linked to HubSpot.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Sign up for Tax and Advisory.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Site footer</span></div><div class="compare-body"><div class="panel surface"><p><b>Legal</b><br>Legal Disclaimer · Terms of Use and Disclaimers · Email Disclaimer</p><p><b>Privacy</b><br>CLA Global Limited – Privacy Policy · Cookie policy</p><p style="margin:0"><b>Connect</b><br>LinkedIn · YouTube · X</p></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Footer sign-up</span></div><div class="compare-body"><form class="qw-form" id="qw11-form" data-done="qw11-done" novalidate><h3 class="h4">Insights from member firms, by email</h3><div class="field"><label for="qw11-email">Email</label><input type="email" id="qw11-email" required><p class="field-error" hidden>Enter an email address like name@company.com.</p></div><fieldset><legend>Topics</legend><div class="check-grid"><label class="check"><input type="checkbox" name="t" value="Tax"> Tax</label><label class="check"><input type="checkbox" name="t" value="Audit"> Audit</label><label class="check"><input type="checkbox" name="t" value="Advisory"> Advisory</label><label class="check"><input type="checkbox" name="t" value="Outsourcing"> Outsourcing</label></div></fieldset><div class="field"><label class="check"><input type="checkbox" id="qw11-ok" required> I agree to receive emails and can unsubscribe at any time.</label><p class="field-error" hidden>Please agree to receive emails.</p></div><button class="btn" type="submit">Sign up</button></form><div id="qw11-done" class="confirm-box" hidden><p><b>You're signed up.</b> Check your inbox to confirm your address.</p><button type="button" class="btn-link" data-reset-form="qw11-form">Start again</button></div></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

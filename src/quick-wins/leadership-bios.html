@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW18 Leadership with biographies — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 18 of 24 · Leadership with biographies</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Add a photo and a short biography for each of the board members and global office contacts, with board members linked to their firm's profile.</p></div>
+          <div><h2>Why</h2><p>The Leadership page lists 13 people with their name, role, firm and a LinkedIn link, and nothing more. For a firm weighing up membership, the people running the network are part of the decision, and a few lines on each person's background would go a long way.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW18 (R87, idea #39) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW18</p>
+        <h1>Leadership with biographies</h1>
+        <p class="lead">Photos and short biographies for the board and the global office.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Open a biography.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Leadership page</span></div><div class="compare-body"><ul class="media-list"><li>[Board member]<span>[Role] · [Firm], [Country] · LinkedIn</span></li><li>[Board member]<span>[Role] · [Firm], [Country] · LinkedIn</span></li><li>[Global office contact]<span>[Role] · CLA Global (UK) · LinkedIn</span></li></ul></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Photos and biographies</span></div><div class="compare-body"><div class="people-list"><div class="person"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>[Board member]</b><span>[Role]</span><span class="email">[Firm], [Country]</span><button type="button" class="btn btn-sm btn-secondary" data-modal-open="bio-modal">Read biography</button></div></div><div class="person"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>[Board member]</b><span>[Role]</span><span class="email">[Firm], [Country]</span><button type="button" class="btn btn-sm btn-secondary" data-modal-open="bio-modal">Read biography</button></div></div><div class="person"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>[Global office contact]</b><span>[Role]</span><span class="email">CLA Global, London</span><button type="button" class="btn btn-sm btn-secondary" data-modal-open="bio-modal">Read biography</button></div></div></div><div class="wf-modal" id="bio-modal" role="dialog" aria-modal="true" aria-labelledby="bio-title"><div class="wf-modal-panel"><button type="button" class="wf-modal-close" aria-label="Close">×</button><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><h3 id="bio-title">[Name]</h3><p class="wf-meta">[Role], [Firm]</p><p>[Two or three sentences on background and focus, supplied by the person.]</p><p><a href="#">LinkedIn</a> · <a href="../pages/firm.html?firm=cliftonlarsonallen">Firm profile</a></p></div></div></div></section>
+      </div><p class="wf-note query" data-note="1"><span class="wf-note-label">Content</span>Names are left as placeholders: real biographies would be written with each person.</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

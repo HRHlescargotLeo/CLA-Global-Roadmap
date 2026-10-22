@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW16 Headline numbers in the page — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 16 of 24 · Headline numbers in the page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Write the headline figures into the page itself, so search engines and link previews show 15,000+, 235+ and 1,600+ instead of zeros.</p></div>
+          <div><h2>Why</h2><p>The figures count up from zero as you scroll, which looks fine in a browser. But the page HTML says "0+" for all three, and that is what search engines, link previews and anyone with JavaScript switched off see. The same block appears on four pages. Keeping the count-up as an extra while the real numbers sit in the HTML fixes it without changing the look.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW16 (R85, idea #35) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW16</p>
+        <h1>Headline numbers in the page</h1>
+        <p class="lead">The 15,000+, 235+ and 1,600+ figures written into the page, so search engines and link previews see them.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Compare the two link previews.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>What previews and search engines see</span></div><div class="compare-body"><div class="share-card"><div class="wf-placeholder ratio-16-9">Link preview image</div><div><b>Who We Are | CLA Global</b><span class="wf-meta">The Power Behind Our Membership: 0+ Personnel, 0+ Offices, 0+ Partners and equivalents</span></div></div><div class="statistics"><div class="stat-item"><div class="stat-value count-up" data-to="15000">0</div><div class="stat-title">Personnel</div></div><div class="stat-item"><div class="stat-value count-up" data-to="235">0</div><div class="stat-title">Offices</div></div></div><button type="button" class="btn btn-secondary btn-sm" data-replay>Replay the count-up</button></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Real figures in the HTML</span></div><div class="compare-body"><div class="share-card"><div class="wf-placeholder ratio-16-9">Link preview image</div><div><b>Who We Are | CLA Global</b><span class="wf-meta">15,000+ people, 235+ offices and 1,600+ partners in member firms across 26 countries.</span></div></div><div class="statistics"><div class="stat-item"><div class="stat-value">15,000+</div><div class="stat-title">People</div></div><div class="stat-item"><div class="stat-value">235+</div><div class="stat-title">Offices</div></div></div></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

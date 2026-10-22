@@ -60,6 +60,34 @@ client requirements; CLA Global has not yet reviewed them.
 - R53 A flagship research report page with key findings, a regional chart and chapters (#26).
 - R54 Email sign-up with topic and region preferences (#27).
 
+## Quick wins tab (QW1–QW24)
+- R05 The model has two tabs, Big improvements and Quick wins, each with its own overview; the pager stays within the current tab.
+- R70 QW1 Contacts on the firm list (#4)
+- R71 QW2 Clear "View details" links (#5)
+- R72 QW3 Firm contacts kept current (#7)
+- R73 QW4 Named specialists on service pages (#13)
+- R74 QW5 How we work across borders (#16)
+- R75 QW6 Network or alliance, side by side (#18)
+- R76 QW7 Member stories (#20)
+- R77 QW8 The network's growth at a glance (#22)
+- R78 QW9 Latest insights on the homepage (#24)
+- R79 QW10 Featured insights shown once (#25)
+- R80 QW11 Email sign-up (#27)
+- R81 QW12 A press room (#30)
+- R82 QW13 A shorter client form (#32)
+- R83 QW14 Say what happens next (#33)
+- R84 QW15 Separate forms for each audience (#34)
+- R85 QW16 Headline numbers in the page (#35)
+- R86 QW17 Rankings and recognition (#37)
+- R87 QW18 Leadership with biographies (#39)
+- R88 QW19 Member lists kept current (#40)
+- R89 QW20 One spelling standard (#42)
+- R90 QW21 Page titles and descriptions (#43)
+- R91 QW22 Accessibility fixes (#47)
+- R92 QW23 HubSpot forms in the site's style (#48)
+- R93 QW24 One heading, said once (#49)
+- Ideas #36 (one set of figures), #41 (old network name, already corrected on the live site by October 2026) and #44 (tracking against the cookie choice) are not demonstrated. #44 overlaps the consent configuration already with the analytics specialist on the LinkedIn campaign tracking work.
+
 ## Technical
 - T01 Vanilla JS and CSS only; no build dependencies beyond Node for includes.
 - T02 Built to docs/ for GitHub Pages; docs/.nojekyll present.

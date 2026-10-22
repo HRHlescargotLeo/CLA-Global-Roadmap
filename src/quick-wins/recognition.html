@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW17 Rankings and recognition — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 17 of 24 · Rankings and recognition</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A strip on the homepage and join page showing the network's memberships and rankings, each with its source and date.</p></div>
+          <div><h2>Why</h2><p>Forum of Firms membership in January 2026, and the news that CLA Global became a top 15 network within two years, are both strong signals to clients and to firms considering joining. At the moment they appear only as items in the Media list, where they scroll out of sight as new announcements arrive.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW17 (R86, idea #37) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW17</p>
+        <h1>Rankings and recognition</h1>
+        <p class="lead">A strip on the homepage and join page showing memberships and rankings, with source and date.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Compare where the Forum of Firms news appears.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Media list</span></div><div class="compare-body"><ul class="media-list"><li>CLA Global Welcomes Network Member in Hong Kong<span>13 May 2026</span></li><li>CLA Global Becomes a Member of the Forum of Firms<span>29 Jan 2026</span></li><li>CLA Global Welcomes Three New Alliance Firms in the United States<span>22 Jan 2026</span></li></ul><p class="wf-meta">Media, page 1</p></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Homepage and Join</span></div><div class="compare-body"><div class="proof-strip"><div class="panel"><span class="wf-placeholder">Logo</span><p class="wf-meta" style="margin:0"><b>Forum of Firms</b><br>Member since January 2026</p></div><div class="panel"><span class="wf-placeholder">Logo</span><p class="wf-meta" style="margin:0"><b>[Ranking]</b><br>[Source and year]</p></div><div class="panel"><span class="wf-placeholder">Logo</span><p class="wf-meta" style="margin:0"><b>[Award or listing]</b><br>[Source and year]</p></div></div></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

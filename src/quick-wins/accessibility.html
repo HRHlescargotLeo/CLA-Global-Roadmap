@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW22 Accessibility fixes — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 22 of 24 · Accessibility fixes</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Fix the accessibility issues found in the review: label the search field, add alt text to meaningful images, and give links proper labels. Then check the main templates against WCAG 2.2 AA.</p></div>
+          <div><h2>Why</h2><p>On the homepage, ten of the 19 images have no alt text (some are decorative, which is fine, but not all), the search box that opens from the header has no label, and the firm lists carry placeholder link text. None of these is hard to fix, and together they make a noticeable difference to anyone using a screen reader.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW22 (R91, idea #47) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW22</p>
+        <h1>Accessibility fixes</h1>
+        <p class="lead">Fix the main issues found: unlabelled search, images without alt text and placeholder link labels.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Press &quot;Hear the page&quot; on both versions.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Homepage and Locations</span></div><div class="compare-body"><div class="row"><input type="search" placeholder="Search..." aria-label="" style="max-width:260px"></div><div class="wf-placeholder ratio-16-9" style="max-width:260px">Image, no alt text</div><button type="button" class="btn btn-secondary btn-sm" data-reveal="hear-a1">Hear the page</button><ul class="hear-list" id="hear-a1" hidden><li>Edit text, Search...</li><li>Image</li><li>Link, View details: City/State</li></ul></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Labelled</span></div><div class="compare-body"><div class="field" style="max-width:260px;margin:0"><label for="a11y-s">Search the site</label><input type="search" id="a11y-s" placeholder="Search..."></div><div class="wf-placeholder ratio-16-9" style="max-width:260px">Image with alt text</div><button type="button" class="btn btn-secondary btn-sm" data-reveal="hear-a2">Hear the page</button><ul class="hear-list" id="hear-a2" hidden><li>Search the site, edit text</li><li>Image, Aerial view of a city financial district</li><li>Link, View details for CLA Brazil</li></ul></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

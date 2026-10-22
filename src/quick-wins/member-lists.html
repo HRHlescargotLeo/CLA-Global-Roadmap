@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW19 Member lists kept current — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 19 of 24 · Member lists kept current</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Check the network and alliance lists against membership records, and add a short note to old news about firms that have since left, with a link to current firms in that country.</p></div>
+          <div><h2>Why</h2><p>Search results and news still announce some firms joining that don't appear on today's lists. For example, a 2024 news item welcomes an alliance member in a country that is no longer listed. Firms come and go in any network, but a reader landing on that page from a search has no way of knowing the firm has moved on.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW19 (R88, idea #40) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW19</p>
+        <h1>Member lists kept current</h1>
+        <p class="lead">Old news about firms that have since left carries a short note and a link to current firms.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Open the old news item on both versions.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Old news item</span></div><div class="compare-body"><p class="eyebrow">News · [2024]</p><h3>CLA Global Welcomes [Firm] as a New Alliance Member Firm in [Country]</h3><p>[Firm] provides corporate, global mobility, international and transfer pricing tax services…</p></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>With a note for former members</span></div><div class="compare-body"><p class="eyebrow">News · [2024]</p><h3>CLA Global Welcomes [Firm] as a New Alliance Member Firm in [Country]</h3><p class="context-line">[Firm] is no longer a CLA Global member. <a href="../pages/find-a-firm.html">See current firms</a> or <a href="../pages/enquiry.html">tell us where you need help</a>.</p><p>[Firm] provides corporate, global mobility, international and transfer pricing tax services…</p></div></section>
+      </div><p class="wf-note" data-note="1"><span class="wf-note-label">CMS</span>Marking a firm as a former member on its record adds the note to every news item that mentions it.</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW9 Latest insights on the homepage — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 9 of 24 · Latest insights on the homepage</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The homepage insights row always shows the newest three insights, newest first, without anyone having to update it.</p></div>
+          <div><h2>Why</h2><p>On the day we looked, the homepage showed insights from 30 March, 28 May, 13 July and 28 July 2026, oldest first, while two newer pieces from August and September were already on the Insights page. It suggests the row is picked by hand and hasn't been revisited since July. Pulling it automatically means the homepage never looks out of date for the sake of an edit.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW9 (R78, idea #24) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW9</p>
+        <h1>Latest insights on the homepage</h1>
+        <p class="lead">The homepage shows the newest three insights automatically, newest first.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Publish a new insight and watch both rows.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Homepage, oldest first</span></div><div class="compare-body"><ul class="media-list"><li>Implementation of Pillar Two global tax system accelerates<span>30 March, 2026</span></li><li>Building Cyber Resilience: A Robust Roadmap for the Future<span>28 May, 2026</span></li><li>Succession Planning: Ownership-Focused Continuity and Legacy Preservation<span>13 July, 2026</span></li><li>Brazil's New Financial Cybersecurity Rules Align to Global Standards<span>28 July, 2026</span></li></ul></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Newest three, automatically</span></div><div class="compare-body"><div class="insight-list" id="qw-proposed-row"></div><p><button type="button" class="btn btn-secondary" data-publish>Publish a new insight</button></p></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

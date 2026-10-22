@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW6 Network or alliance, side by side — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 6 of 24 · Network or alliance, side by side</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A side-by-side comparison of network and alliance membership, with a two-question check that suggests which route suits a firm.</p></div>
+          <div><h2>Why</h2><p>The Locations page describes alliance membership as giving firms the benefits of CLA Global "without the requirements of a network membership", but those requirements are never listed anywhere. A managing partner reading that has to enquire to find out what they'd be signing up to. A table, even one that leaves fees as a basis rather than a figure, answers the question that comes before every membership enquiry.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW6 (R75, idea #18) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW6</p>
+        <h1>Network or alliance, side by side</h1>
+        <p class="lead">A comparison of the two membership routes, with a two-question check of which suits a firm.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Answer the two questions.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Locations page</span></div><div class="compare-body"><h3>Network Firms</h3><p>Our network members are highly collaborative with a commitment to build and drive CLA Global's strategy. They adopt the CLA Global network name and brand identity…</p><p><a href="#">Find a firm</a></p><h3>Alliance Firms</h3><p>An alliance membership offers global resources and reach in a flexible model. Our alliance members experience the benefits of a CLA Global membership without the requirements of a network membership.</p><p><a href="#">Find a firm</a></p></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Comparison and a quick check</span></div><div class="compare-body"><div class="table-wrap"><table class="cmp-table"><thead><tr><th scope="col">&nbsp;</th><th scope="col">Network</th><th scope="col">Alliance</th></tr></thead><tbody><tr><th scope="row">Name and brand</th><td>CLA Global name and brand</td><td>Own name</td></tr><tr><th scope="row">Access to firms</th><td>Full</td><td>Full</td></tr><tr><th scope="row">Quality reviews</th><td>[Network cycle]</td><td>[Lighter or none]</td></tr><tr><th scope="row">Governance</th><td>[Board and committees]</td><td>[Advisory]</td></tr><tr><th scope="row">Fees</th><td>[Basis]</td><td>[Basis]</td></tr></tbody></table></div><form class="qw-checker" id="route-checker" onsubmit="return false"><fieldset><legend>Would you take the CLA Global name?</legend><div class="row"><label class="check"><input type="radio" name="rc-brand" value="yes"> Yes</label><label class="check"><input type="radio" name="rc-brand" value="no"> No, we'd keep ours</label></div></fieldset><fieldset><legend>Do you want a say in how the network is run?</legend><div class="row"><label class="check"><input type="radio" name="rc-gov" value="yes"> Yes</label><label class="check"><input type="radio" name="rc-gov" value="no"> Not at first</label></div></fieldset><p class="qw-result" id="route-result" aria-live="polite" hidden></p></form></div></section>
+      </div><p class="wf-note query" data-note="1"><span class="wf-note-label">Open question</span>The bracketed rows need CLA Global's input. Which obligations and fee bases can be published?</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

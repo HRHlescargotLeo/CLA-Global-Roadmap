@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW21 Page titles and descriptions — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 21 of 24 · Page titles and descriptions</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Set a title and description pattern for each page type, and fill in the pages that are missing them, so search results and shared links read properly.</p></div>
+          <div><h2>Why</h2><p>Join, Leadership, Why CLA Global? and Locations have no meta description, so search engines make one up from whatever text they find. Leadership, Why CLA Global? and Our Brand and Values have no "| CLA Global" in their titles, and the search results page has no title at all.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW21 (R90, idea #43) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW21</p>
+        <h1>Page titles and descriptions</h1>
+        <p class="lead">A title and description pattern for every page type, so search results and shares read properly.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Switch between pages to see each search result.</p>
+      <div class="tabs" role="tablist" aria-label="Pages"><button class="tab active" data-tab="sr-lead" aria-selected="true">Leadership</button><button class="tab" data-tab="sr-join" aria-selected="false">Join</button><button class="tab" data-tab="sr-search" aria-selected="false">Search results</button></div><div><div class="tab-panel active" id="sr-lead"><div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="c1"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="c1" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Search result</span></div><div class="compare-body"><div class="serp"><span class="url">claglobal.com › who-we-are › leadership</span><span class="title">Leadership</span><span class="desc">[No description: the search engine picks text from the page]</span></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Titled and described</span></div><div class="compare-body"><div class="serp"><span class="url">claglobal.com › who-we-are › leadership</span><span class="title">Leadership | CLA Global</span><span class="desc">The board and global office team leading CLA Global, a network of independent accounting and advisory firms in 26 countries.</span></div></div></section>
+      </div></div><div class="tab-panel" id="sr-join"><div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="c2"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="c2" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Search result</span></div><div class="compare-body"><div class="serp"><span class="url">claglobal.com › who-we-are › join</span><span class="title">Become a Member | CLA Global</span><span class="desc">[No description]</span></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Titled and described</span></div><div class="compare-body"><div class="serp"><span class="url">claglobal.com › who-we-are › join</span><span class="title">Join CLA Global | Network and alliance membership</span><span class="desc">How independent accounting firms join CLA Global: benefits, network or alliance membership, and the steps to joining.</span></div></div></section>
+      </div></div><div class="tab-panel" id="sr-search"><div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="c3"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="c3" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Browser tab</span></div><div class="compare-body"><div class="serp"><span class="url">Browser tab</span><span class="title">[Empty title: the tab shows the web address]</span></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Titled</span></div><div class="compare-body"><div class="serp"><span class="url">Browser tab</span><span class="title">Search results for "transfer pricing" | CLA Global</span></div></div></section>
+      </div></div></div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW23 HubSpot forms in the site&#x27;s style — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 23 of 24 · HubSpot forms in the site&#x27;s style</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Style the HubSpot forms with the site's own type, field and button styles, so they look like part of the page.</p></div>
+          <div><h2>Why</h2><p>The forms use HubSpot's default look: small labels, pale grey fields and HubSpot's own button, inside a site that is otherwise navy, Georgia and light sans. It is a theme setting in HubSpot plus a little CSS, and makes the most important step on the site look as considered as the rest of it.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW23 (R92, idea #48) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW23</p>
+        <h1>HubSpot forms in the site&#x27;s style</h1>
+        <p class="lead">Style the HubSpot forms to match the rest of the site.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Compare the two forms.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>HubSpot default</span></div><div class="compare-body"><div class="old-form"><label>First name*<input type="text"></label><label>Email*<input type="text"></label><label>How can we help? *<select><option>Please Select</option></select></label><button type="button" class="btn btn-sm" style="justify-self:start">Submit</button></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Site styles</span></div><div class="compare-body"><div class="form-grid"><div class="field"><label for="fs1">First name</label><input type="text" id="fs1"></div><div class="field"><label for="fs2">Email</label><input type="email" id="fs2"></div><div class="field full"><label for="fs3">How can we help?</label><select id="fs3"><option>Choose</option></select></div></div><button type="button" class="btn" style="justify-self:start">Send</button></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

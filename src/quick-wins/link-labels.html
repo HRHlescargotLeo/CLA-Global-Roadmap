@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW2 Clear &quot;View details&quot; links — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 2 of 24 · Clear &quot;View details&quot; links</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Give every "View details" link on the Locations lists a label that names the firm, so people using screen readers can tell the links apart.</p></div>
+          <div><h2>Why</h2><p>The hidden text that screen readers announce for each "View details" link reads ": City/State", which looks like a placeholder left in the template. There are 57 of these links across the two lists, and they all sound the same. The fix is one line in the template, and it is the sort of thing an accessibility audit picks up straight away.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW2 (R71, idea #5) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW2</p>
+        <h1>Clear &quot;View details&quot; links</h1>
+        <p class="lead">Give every firm link its own label, so screen reader users hear which firm each link opens.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Press &quot;Hear the links&quot; on both versions.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>As on claglobal.com</span></div><div class="compare-body"><p><b>Brazil</b> · CLA Brazil · <a href="#">View details</a></p><p><b>Bulgaria</b> · CLA Bulgaria · <a href="#">View details</a></p><p><b>China</b> · CLA Global TS · <a href="#">View details</a></p><button type="button" class="btn btn-secondary btn-sm" data-reveal="hear-today">Hear the links</button><ul class="hear-list" id="hear-today" hidden><li>Link, View details: City/State</li><li>Link, View details: City/State</li><li>Link, View details: City/State</li></ul></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Each link names its firm</span></div><div class="compare-body"><p><b>Brazil</b> · CLA Brazil · <a href="#">View details<span class="visually-hidden"> for CLA Brazil</span></a></p><p><b>Bulgaria</b> · CLA Bulgaria · <a href="#">View details<span class="visually-hidden"> for CLA Bulgaria</span></a></p><p><b>China</b> · CLA Global TS · <a href="#">View details<span class="visually-hidden"> for CLA Global TS, China</span></a></p><button type="button" class="btn btn-secondary btn-sm" data-reveal="hear-prop">Hear the links</button><ul class="hear-list" id="hear-prop" hidden><li>Link, View details for CLA Brazil</li><li>Link, View details for CLA Bulgaria</li><li>Link, View details for CLA Global TS, China</li></ul></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

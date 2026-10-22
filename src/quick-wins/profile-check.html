@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW3 Firm contacts kept current — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 3 of 24 · Firm contacts kept current</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A short check that each member firm completes every six months, confirming or updating the contacts on its profile. The global office sees which firms are up to date.</p></div>
+          <div><h2>Why</h2><p>Firm profiles are one of the most useful things on the site, and also the easiest to let slip. On the CLA Malta profile, for example, two of the four partner emails use a different domain from the firm's own website, which suggests a change that never reached the profile. Asking firms to confirm their entry twice a year is a small habit that keeps the directory trustworthy.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW3 (R72, idea #7) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW3</p>
+        <h1>Firm contacts kept current</h1>
+        <p class="lead">A simple check each firm completes every six months to confirm its contacts are still right.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Confirm one contact and update another.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Firm profile</span></div><div class="compare-body"><p class="wf-meta">A firm profile, showing contacts as entered.</p><div class="person"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>[Partner name]</b><span>Partner</span><span class="email">[name]@[previous firm domain]</span></div></div><div class="person"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>[Partner name]</b><span>Partner</span><span class="email">[name]@[current firm domain]</span></div></div><p class="wf-meta">No date shows when the details were last checked, and nothing prompts the firm to check them.</p></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>What each firm sees</span></div><div class="compare-body"><p><b>Check your firm's entry</b><br><span class="wf-meta">CLA Malta · sent every six months · <span id="check-count">0 of 3 contacts confirmed</span></span></p><div class="check-row"><div><b>Mark Vella</b><br><span class="wf-meta">Partner · <span class="check-email">mark.vella@example.com</span></span><br><span class="status-pill due">Not yet checked</span><div class="check-edit field" hidden style="margin-top:0.5rem"><label for="ce0">New email</label><div class="row"><input type="email" id="ce0" value="mark.vella@example.com"><button type="button" class="btn btn-sm" data-save-edit>Save</button></div></div></div><div class="row"><button type="button" class="btn btn-sm" data-confirm>Still correct</button><button type="button" class="btn btn-sm btn-secondary" data-edit>Update</button></div></div><div class="check-row"><div><b>[Second partner]</b><br><span class="wf-meta">Partner · <span class="check-email">[name]@example.com</span></span><br><span class="status-pill due">Not yet checked</span><div class="check-edit field" hidden style="margin-top:0.5rem"><label for="ce1">New email</label><div class="row"><input type="email" id="ce1" value="[name]@example.com"><button type="button" class="btn btn-sm" data-save-edit>Save</button></div></div></div><div class="row"><button type="button" class="btn btn-sm" data-confirm>Still correct</button><button type="button" class="btn btn-sm btn-secondary" data-edit>Update</button></div></div><div class="check-row"><div><b>[Third partner]</b><br><span class="wf-meta">Partner · <span class="check-email">[name]@example.com</span></span><br><span class="status-pill due">Not yet checked</span><div class="check-edit field" hidden style="margin-top:0.5rem"><label for="ce2">New email</label><div class="row"><input type="email" id="ce2" value="[name]@example.com"><button type="button" class="btn btn-sm" data-save-edit>Save</button></div></div></div><div class="row"><button type="button" class="btn btn-sm" data-confirm>Still correct</button><button type="button" class="btn btn-sm btn-secondary" data-edit>Update</button></div></div></div></section>
+      </div><p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>A reminder email goes to each firm's main contact with a link to this page. Confirmed entries show "Last checked" on the public profile.</p><p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Who in the global office follows up firms that don't respond, and after how long?</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

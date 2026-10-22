@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW7 Member stories — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 7 of 24 · Member stories</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A small set of member stories, each with a quote, a photo or short video, and what changed for the firm, used on the join page and in LinkedIn posts.</p></div>
+          <div><h2>Why</h2><p>Two member quotes exist, one from dhpg on Why CLA Global? and one from CLA Slovakia on Who We Are, each on its own on a different page. Firms considering membership tend to trust other firms more than anything the network says about itself, so the quotes deserve a proper home.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW7 (R76, idea #20) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW7</p>
+        <h1>Member stories</h1>
+        <p class="lead">Short stories from member firms about why they joined and what changed.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Move through the stories.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Who We Are page</span></div><div class="compare-body"><p class="wf-meta">Who We Are page, below the figures:</p><blockquote class="wf-quote"><p>"We made the decision to become a member of CLA Global as we are looking forward to increasing the number of work opportunities and projects that we receive…"</p><cite>Bart Waterloos, Managing Partner at CLA Slovakia</cite></blockquote></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Stories together, on the join page</span></div><div class="compare-body"><div class="carousel" aria-label="Member stories"><div class="carousel-track"><div class="carousel-item"><div class="wf-placeholder ratio-16-9">Video 16:9</div><blockquote class="wf-quote"><p>"Our cooperation has got off to a promising start. The first steps have been taken in joint client development, but also in the mutual secondment of staff…"</p><cite>Prof. Dr. Andreas Blum, Managing Partner, dhpg</cite></blockquote></div><div class="carousel-item"><div class="wf-placeholder ratio-16-9">Video 16:9</div><blockquote class="wf-quote"><p>"We made the decision to become a member of CLA Global as we are looking forward to increasing the number of work opportunities and projects that we receive."</p><cite>Bart Waterloos, Managing Partner, CLA Slovakia</cite></blockquote></div><div class="carousel-item"><div class="wf-placeholder ratio-16-9">Video 16:9</div><blockquote class="wf-quote"><p>[A secondee's story from the Global Mobility Program.]</p><cite>[Name, role, firm]</cite></blockquote></div></div><div class="carousel-controls"><button type="button" class="carousel-arrow" data-dir="prev" aria-label="Previous story">‹</button><button type="button" class="carousel-arrow" data-dir="next" aria-label="Next story">›</button></div><div class="carousel-indicators"></div></div></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

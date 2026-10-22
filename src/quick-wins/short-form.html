@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW13 A shorter client form — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 13 of 24 · A shorter client form</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Cut the client enquiry form from ten fields to six: phone becomes optional, country becomes a list, and "How did you find out about us?" moves to the confirmation page.</p></div>
+          <div><h2>Why</h2><p>For a client, the current form is ten fields, eight of them required, including phone number and "How did you find out about us?". Country is free text, while the phone field next to it has a list of 235 countries. Every required field is a reason for someone to give up, and none of these is needed to reply to an enquiry.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW13 (R82, idea #32) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW13</p>
+        <h1>A shorter client form</h1>
+        <p class="lead">The client enquiry cut from ten fields to six, with phone optional and country as a list.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Try to send the proposed form empty, then complete it.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Contact Us, client route</span></div><div class="compare-body"><p class="field-count" id="old-count">10 fields, 8 required</p><div class="old-form"><label>First name*<input type="text" disabled></label><label>Last name*<input type="text" disabled></label><label>Organization*<input type="text" disabled></label><label>Email*<input type="text" disabled></label><label>Phone number*<input type="text" disabled></label><label>Country*<input type="text" disabled></label><label>How can we help? *<select disabled><option>Please Select</option></select></label><label>Comments<input type="text" disabled></label><label>How did you find out about us?*<select disabled><option>Please Select</option></select></label><label>If other, please provide details<input type="text" disabled></label></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Six fields</span></div><div class="compare-body"><p class="field-count">6 fields, 5 required</p><form class="qw-form" id="qw13-form" data-done="qw13-done" novalidate><div class="form-grid"><div class="field"><label for="q13a">Name</label><input type="text" id="q13a" required><p class="field-error" hidden>Enter your name.</p></div><div class="field"><label for="q13b">Work email</label><input type="email" id="q13b" required><p class="field-error" hidden>Enter an email address like name@company.com.</p></div><div class="field"><label for="q13c">Company</label><input type="text" id="q13c" required><p class="field-error" hidden>Enter your company.</p></div><div class="field"><label for="q13d">Country you need help in</label><select id="q13d" required><option value="">Choose</option><option>Germany</option><option>Spain</option><option>United Arab Emirates</option><option>United States</option><option>Another country</option></select><p class="field-error" hidden>Choose a country.</p></div><div class="field"><label for="q13e">Phone <span class="wf-meta">(optional)</span></label><input type="tel" id="q13e"></div><div class="field full"><label for="q13f">How can we help?</label><textarea id="q13f" rows="3" required></textarea><p class="field-error" hidden>Tell us a little about what you need.</p></div></div><button class="btn" type="submit">Send</button></form><div id="qw13-done" class="confirm-box" hidden><p><b>Sent.</b> We'll reply within two working days.</p><button type="button" class="btn-link" data-reset-form="qw13-form">Start again</button></div></div></section>
+      </div><p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Standalone version of the form change. The full routed enquiry is big improvement 3.</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

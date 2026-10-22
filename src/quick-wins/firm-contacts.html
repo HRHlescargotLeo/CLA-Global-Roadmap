@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW1 Contacts on the firm list — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 1 of 24 · Contacts on the firm list</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Pull each firm's main contact, city and email from its profile onto the Locations list, with a button to get in touch. Nothing else about the list changes.</p></div>
+          <div><h2>Why</h2><p>Every card on the network and alliance lists has address, email and phone fields in its markup, but they are all empty. To find a person you have to open each profile in turn, which on a phone means a lot of back and forth. The profiles already hold the contacts, so this is a template change rather than new content.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW1 (R70, idea #4) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW1</p>
+        <h1>Contacts on the firm list</h1>
+        <p class="lead">Put each firm&#x27;s main contact, city and email on the Locations list, so visitors can act without opening every profile.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Copy an email address from the proposed card.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>As on claglobal.com</span></div><div class="compare-body"><h3>Brazil</h3><p><b>CLA Brazil</b></p><p><a href="#">View details</a></p><hr style="border:0;border-top:1px solid var(--wf-border)"><h3>Bulgaria</h3><p>CLA Bulgaria</p><p><a href="#">View details</a></p></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Contact on every card</span></div><div class="compare-body"><article class="firm-card"><div class="firm-card-top"><span class="badge solid">Network</span><span class="wf-meta">São Paulo, Brazil</span></div><h3>CLA Brazil</h3><div class="firm-contact"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>Rafael Monteiro</b><span>Managing Partner</span><span class="email" id="qw1-email">rafael.monteiro@example.com</span></div></div><div class="row"><button type="button" class="btn btn-sm" data-copy="qw1-email" data-copy-msg="Email address copied">Copy email</button><a class="btn btn-sm btn-secondary" href="#">View details for CLA Brazil</a></div></article><article class="firm-card"><div class="firm-card-top"><span class="badge solid">Network</span><span class="wf-meta">Sofia, Bulgaria</span></div><h3>CLA Bulgaria</h3><div class="firm-contact"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>Elena Petrova</b><span>Managing Partner</span><span class="email">elena.petrova@example.com</span></div></div><div class="row"><button type="button" class="btn btn-sm" data-toast="Email address copied">Copy email</button><a class="btn btn-sm btn-secondary" href="#">View details for CLA Bulgaria</a></div></article></div></section>
+      </div><p class="wf-note" data-note="1"><span class="wf-note-label">CMS</span>The contact shown is the one marked as main contact on the firm's profile, so no one has to maintain it twice.</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

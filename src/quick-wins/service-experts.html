@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW4 Named specialists on service pages — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 4 of 24 · Named specialists on service pages</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>End each service page with three named specialists from member firms, each with a contact button, instead of a single generic Contact Us.</p></div>
+          <div><h2>Why</h2><p>Of the four service pages, only Advisory names anyone. Audit, Tax and Outsourcing each finish with a Contact Us button that leads to the general form. A finance director deciding whether a network can handle their transfer pricing wants to see who would actually do the work, and three names says more than a paragraph about global teams.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW4 (R73, idea #13) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW4</p>
+        <h1>Named specialists on service pages</h1>
+        <p class="lead">Three named specialists at the foot of each service page, in place of a generic Contact Us.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Contact one of the specialists.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Foot of the Tax page</span></div><div class="compare-body"><h3>Tax</h3><p>…This allows you to focus on what you do best: reaching your domestic and cross-border business goals.</p><h3>Contact Us</h3><p><a class="btn" href="#">Contact Us</a></p></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Named specialists (sample people)</span></div><div class="compare-body"><h3>Talk to a tax specialist</h3><div class="people-list"><div class="person"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>Katrin Weber</b><span>Partner, Transfer Pricing · dhpg, Germany</span><span class="email">katrin.weber@example.com</span><a class="btn btn-sm" href="../pages/enquiry.html?firm=dhpg&amp;service=tax">Contact Katrin</a></div></div><div class="person"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>Sara Khalil</b><span>Tax Director · CLA Emirates, UAE</span><span class="email">sara.khalil@example.com</span><a class="btn btn-sm" href="../pages/enquiry.html?firm=cla-emirates&amp;service=tax">Contact Sara</a></div></div><div class="person"><div class="wf-placeholder avatar" aria-hidden="true">Photo</div><div><b>Megan Olson</b><span>Principal, International Tax · CliftonLarsonAllen, US</span><span class="email">megan.olson@example.com</span><a class="btn btn-sm" href="../pages/enquiry.html?firm=cliftonlarsonallen&amp;service=tax">Contact Megan</a></div></div></div></div></section>
+      </div><p class="wf-note query" data-note="1"><span class="wf-note-label">Open question</span>Who chooses the three people per service, and how often do they change?</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

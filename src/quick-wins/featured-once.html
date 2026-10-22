@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW10 Featured insights shown once — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 10 of 24 · Featured insights shown once</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Show the two featured insights once, at the top of the first page of results, rather than at the top of every page.</p></div>
+          <div><h2>Why</h2><p>The Insights listing repeats the same two "featured insights" (13 July and 28 May) at the top of all six pages. By page six they are sitting above articles from December 2023, and a reader paging through sees them six times. It is a small template change.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW10 (R79, idea #25) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW10</p>
+        <h1>Featured insights shown once</h1>
+        <p class="lead">The two featured insights appear at the top of page one only, not on every page of results.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Move through the pages on both versions.</p>
+      <div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Insights listing (shortened)</span></div><div class="compare-body"><div data-pager-mode="today"><ul class="media-list"><li data-feat>Featured · Succession Planning: Ownership-Focused Continuity…<span>13 Jul 2026</span></li><li data-feat>Featured · Building Cyber Resilience: A Robust Roadmap…<span>28 May 2026</span></li><li data-pg="1">Adopting digital VAT: How Malta is navigating ViDA…<span>21 Sep 2026</span></li><li data-pg="1">Clarifying UAE/U.S. tax residency laws…<span>17 Aug 2026</span></li><li data-pg="2">Implementation of Pillar Two global tax system accelerates<span>30 Mar 2026</span></li><li data-pg="2">Transfer Pricing: How Multinational Companies Can Use it…<span>27 Jan 2026</span></li><li data-pg="3">Should Health Care and Life Sciences Consider ESG?<span>12 Dec 2023</span></li><li data-pg="3">The HR Tune-Up: Why Regular Review is Critical…<span>8 Dec 2023</span></li></ul><nav class="row" aria-label="Pages, today"><button type="button" class="chip" data-page="1">1</button><button type="button" class="chip" data-page="2">2</button><button type="button" class="chip" data-page="3">3</button></nav></div></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>Featured on page one only</span></div><div class="compare-body"><div data-pager-mode="proposed"><ul class="media-list"><li data-feat>Featured · Succession Planning: Ownership-Focused Continuity…<span>13 Jul 2026</span></li><li data-feat>Featured · Building Cyber Resilience: A Robust Roadmap…<span>28 May 2026</span></li><li data-pg="1">Adopting digital VAT: How Malta is navigating ViDA…<span>21 Sep 2026</span></li><li data-pg="1">Clarifying UAE/U.S. tax residency laws…<span>17 Aug 2026</span></li><li data-pg="2">Implementation of Pillar Two global tax system accelerates<span>30 Mar 2026</span></li><li data-pg="2">Transfer Pricing: How Multinational Companies Can Use it…<span>27 Jan 2026</span></li><li data-pg="3">Should Health Care and Life Sciences Consider ESG?<span>12 Dec 2023</span></li><li data-pg="3">The HR Tune-Up: Why Regular Review is Critical…<span>8 Dec 2023</span></li></ul><nav class="row" aria-label="Pages, proposed"><button type="button" class="chip" data-page="1">1</button><button type="button" class="chip" data-page="2">2</button><button type="button" class="chip" data-page="3">3</button></nav></div></div></section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

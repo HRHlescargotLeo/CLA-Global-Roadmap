@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QW20 One spelling standard — CLA Global prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body class="qw-page">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this quick win">
+      <div class="container">
+        <p class="proposal-eyebrow">Quick win 20 of 24 · One spelling standard</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Choose one spelling standard for the site, set it out in a one-page style guide, and correct the main pages.</p></div>
+          <div><h2>Why</h2><p>Pages mix US and UK spelling, sometimes within a few lines: "realize", "organization" and "digitized" sit alongside "organise", "organisations" and "specialises". Either standard is fine. Mixing them reads as if no one has checked, which isn't true and isn't the impression the network wants to give. UK spelling would suit a network registered in London, but that is CLA Global's call.</p></div>
+        </div>
+        <p class="proposal-foot">Can be done on its own, without any of the big improvements.</p>
+      </div>
+    </aside>
+
+    <!-- QW20 (R89, idea #42) -->
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow"><a href="index.html">Quick wins</a> › QW20</p>
+        <h1>One spelling standard</h1>
+        <p class="lead">One spelling standard across the site, set out in a short style guide.</p>
+      </div>
+    </div>
+
+    <div class="container qw-demo" style="padding-top:2rem">
+      <p class="proto-try"><strong>Try:</strong> Switch on &quot;Show changes&quot;.</p>
+      <p><button type="button" class="btn btn-secondary btn-sm" data-changes aria-pressed="false">Show changes</button></p><div class="compare-bar"><p class="wf-meta" style="margin:0">Today's version is rebuilt from the live site.</p><div class="seg" role="group" aria-label="Show" data-show-target="cmp"><button type="button" data-show="both" aria-pressed="true">Both</button><button type="button" data-show="today" aria-pressed="false">Today</button><button type="button" data-show="proposed" aria-pressed="false">Proposed</button></div></div>
+      <div class="compare" id="cmp" data-show="both">
+        <section class="compare-panel compare-today" aria-label="Today"><div class="compare-label"><span>Today</span><span>Homepage and Our Brand and Values</span></div><div class="compare-body"><p>CLA Global is a professional services network designed to help <mark class="diff old">realize</mark> the ambitions of privately owned, fast-growing, mid-market clients…</p><p>Explore our insights and case studies to see how member firms help businesses and individuals navigate financial challenges, <mark class="diff">organise</mark> operations…</p><p>We take time to understand their ambitions, both as <mark class="diff">organisations</mark> and as individuals.</p></div></section>
+        <section class="compare-panel compare-proposed" aria-label="Proposed"><div class="compare-label"><span>Proposed</span><span>UK spelling throughout</span></div><div class="compare-body"><p>CLA Global is a professional services network designed to help <mark class="diff">realise</mark> the ambitions of privately owned, fast-growing, mid-market clients…</p><p>Explore our insights and case studies to see how member firms help businesses and individuals navigate financial challenges, <mark class="diff">organise</mark> operations…</p><p>We take time to understand their ambitions, both as <mark class="diff">organisations</mark> and as individuals.</p></div></section>
+      </div><p class="wf-note query" data-note="1"><span class="wf-note-label">Open question</span>UK or US spelling? The proposal assumes UK, but the choice is CLA Global's.</p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>
